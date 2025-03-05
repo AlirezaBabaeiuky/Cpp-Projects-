@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std; 
+
+struct MathResults { // define the name of the structure 
+    int factorial; // define type of the member of the structure 
+    float division;
+}; // don't forget this semicolon 
+// Declare your function here; which is of type: struct 
+MathResults fcn12(int ww, int yy);
+
+int main()
+{
+    cout<<"User can provide 2 inputs here: ";
+    int x, y;
+    cin >> x;
+    cout << " ";
+    cin >> y; 
+    // call the function to do math ... 
+    MathResults answers = fcn12(x, y);
+    cout << endl << "factorial of " << x << " is: " << answers.factorial << endl;
+    cout << "division of " << y << " / " << x << " is: " << answers.division << endl; 
+    
+    
+
+    return 0;
+}
+
+// define your function with multiple outputs 
+MathResults fcn12(int a, int b) { 
+    MathResults Results;
+    Results.factorial = 1;
+    for (int i=1; i<=a; i++) { 
+        Results.factorial = Results.factorial * i; 
+    }
+    Results.division = (float)b / a;
+    return Results; 
+}
+        
