@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std; 
+void fcnswap(int &aa, int &bb); 
+int main()
+{
+    cout << "Enter 2 integers here: ";
+    int x, y; 
+    cin >> x; 
+    cout << " ";
+    cin >> y; 
+    cout << "x = " << x << ", " << "y = " << y << endl;
+    fcnswap(x, y);
+    cout << "x = " << x << ", " << "y = " << y << endl;
+
+    return 0;
+}
+
+void fcnswap(int &a, int &b) {
+    int temp1;
+    temp1 = a; 
+    a = b; 
+    b = temp1;
+}
