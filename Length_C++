@@ -1,0 +1,18 @@
+#include <iostream>
+# include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char Cstr1[10];
+    char Cstr2[] = "C_String"; 
+    
+    string CPPstr1 = "CPP_String";
+    //CPPstr2 CPPstr2[10];
+    int length = CPPstr1.length();
+    cout << "length of C string is: " << strlen(Cstr2) << endl;
+    cout << "length of CPP string is: " << length << endl; 
+
+    return 0;
+}
