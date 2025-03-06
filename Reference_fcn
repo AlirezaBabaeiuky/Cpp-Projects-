@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std; 
+void fcnref (int &a); // declare the function with semicolon - here input to the fcn does not matter at all 
+int main()
+{
+    cout << "Enter an integer here: ";
+    int num; // declare the integer
+    cin >> num; // get the value from the user and store it in integer type of variable called 'num'
+    cout << "User provided the number: " << num << endl;
+    // call the fcnref fcn to make the reference on num
+    fcnref(num);
+    cout << "Calling the Reference function, the output is: " << num << endl;
+
+    return 0;
+}
+
+void fcnref(int &ref_x) { // void keyword does not return any values  
+    // ampersand can be used to find the memory address of  avariable or to make a reference
+    ref_x = 100;
+}
