@@ -1,0 +1,55 @@
+// classes_and_objects.cpp
+// This program demonstrates the usage of classes and objects in C++
+
+#include <iostream> // Include the iostream library for input and output
+
+using namespace std; // Use the standard namespace to avoid prefixing std::
+
+// Defining a class
+class Car {
+private:
+    // Private members
+    string brand;
+    string model;
+    int year;
+
+public:
+    // Constructor
+    Car(string b, string m, int y) {
+        brand = b;
+        model = m;
+        year = y;
+    }
+
+    // Public method to display car details
+    void display() {
+        cout << "Brand: " << brand << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+
+    // Setter for brand
+    void setBrand(string b) {
+        brand = b;
+    }
+
+    // Getter for brand
+    string getBrand() {
+        return brand;
+    }
+};
+
+// The main function is the entry point of the program
+int main() {
+    // Creating an object of the Car class
+    Car myCar("Toyota", "Corolla", 2020);
+
+    // Displaying car details using the display method
+    myCar.display();
+
+    // Modifying and accessing private members using getters and setters
+    myCar.setBrand("Honda");
+    cout << "Updated Brand: " << myCar.getBrand() << endl;
+
+    return 0; // Return 0 to indicate successful completion
+}
