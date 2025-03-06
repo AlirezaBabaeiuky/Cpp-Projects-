@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std; 
+int main()
+{
+int x = 10;
+int &ref_x = x; // ref_x is a reference to x
+ref_x = 20; // x is now also 20
+  cout << x << " " << ref_x << endl;  
+
+    return 0;
+}
