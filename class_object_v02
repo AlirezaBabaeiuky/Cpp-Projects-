@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std; 
+// note i have done this excercise with struct before 
+// define a calss named 'person'
+class person {
+    public:
+    // data members 
+    string name;
+    int age;
+    
+    // member fcn to introduce the person or to be called in the main fcn later on 
+    void introduce() {
+        cout << "Hi, my name is " << name << " and I am " << age << " years old." << endl;
+    }
+};
+
+int main() {
+    // create an object of the person class 
+    person person1; 
+    // accessing data members
+    person1.name = "Alireza";
+    person1.age = 35;
+    
+    // call the class fcn 
+    person1.introduce();
+    
+    return 0; 
+}
