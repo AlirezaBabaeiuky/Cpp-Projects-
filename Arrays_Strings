@@ -1,0 +1,70 @@
+#include <iostream> // nclude iostream for input and output 
+#include <cstring> // include cstring library for string handling functions 
+
+using namespace std; // use the standard namspace to avoid prefix 'std::'
+
+// main fcn is the entry point of the program 
+int main()
+{
+    // Declaring and initializing a single-dimensional array;
+    int array[5] = {1, 2, 3, 4, 5};
+    
+    // Accessing and printing elements of the arrays
+    cout << "array elemets are: ";
+    for (int i = 0; i<5; i++) { 
+        cout << array[i] << " ";
+    }
+    cout << endl; // go to the next line 
+        for (int i = 0; i<5; i++) { 
+        cout << "array [" << i << "] = " <<  array[i] << " ";
+    }
+    
+    // Declaring and initializing a multi-dimensional array;
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}}; //{{first row}, {second row}}
+    
+    //Accesing and printing arrays of the multidim
+    cout << endl << "Multi-dimensional array elements are: " ;
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<3; j++) { 
+            cout << matrix[i][j] << " ";
+        }
+    }
+    cout << endl;
+        for (int i=0; i<2; i++) {
+            for (int j=0; j<3; j++) { 
+                cout << "matrix[" << i << "][" << j << "] = " << matrix[i][j] << " ";  
+        }
+        cout << endl;
+    }
+    
+    // Declarign and initializing C-style strings 
+    char str1[] = "Hello"; 
+    char str2[20];
+    
+    // Copying one string into another string 
+    strcpy(str2, str1);
+    cout << "Copied string is: " << str2 << endl; 
+    
+    // Concatinating strings 
+    strcat(str2, "Hello");
+    cout << "Concatinated string: " << str2 << endl;
+    
+    // Finding the length of a string
+    int length = strlen(str2);
+    cout << "Length of concatenated string: " << length << endl;
+    
+    // now C++ type of String objects
+    // Declaring and initializing C++ string objects
+    string cppStr1 = "Hello"; // first of all keywords are different 
+    string cppStr2 = " World"; 
+    
+    // Concatenating C++ strings
+    string cppStr3 = cppStr1 + cppStr2;
+    cout << "Concatenated C++ string: " << cppStr3 << endl;
+    
+    // Finding the length of a C++ string 
+    length = cppStr3.length(); 
+    cout << "Length of concatinated C++ string: " << length << endl;
+
+    return 0; // return 0 to indicate successful completion 
+}
