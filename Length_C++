@@ -13,6 +13,8 @@ int main()
     int length = CPPstr1.length();
     cout << "length of C string is: " << strlen(Cstr2) << endl;
     cout << "length of CPP string is: " << length << endl; 
+// or:
+cout << "length of CPP string is: " << CPPstr1.length() << endl; 
 
     return 0;
 }
