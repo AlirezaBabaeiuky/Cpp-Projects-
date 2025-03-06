@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std; 
+
+int main()
+{
+    cout<< "Hello World" << endl;
+    char ch1 = 'a';
+    cout << ch1 << endl; 
+    string str1 = "Alireza";
+    cout << str1 << endl; 
+
+    return 0;
+}
