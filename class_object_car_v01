@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstring>
+using namespace std; 
+
+class person {
+    
+    public:
+    string name;
+    int age;
+void introduce() {
+    cout << "name is: " << name << endl;
+    cout << "age is: " << age << endl;
+}
+
+int main()
+{
+    // create an object of the class 
+    person person1;
+    person1.name = "Alex";
+    person1.age = 35; 
+    
+    person1.intrduce();
+    
+    return 0;
+}
