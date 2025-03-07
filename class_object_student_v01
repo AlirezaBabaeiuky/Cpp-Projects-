@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std; 
+
+class ST { 
+    public: 
+    string name;
+    char letter_grade;
+    int grade; 
+    void fcn11 () { 
+        cout << name << " " << letter_grade << " " << grade << endl;
+    }
+};
+
+int main()
+{
+    // make an object of the class 
+    ST student1;
+    ST student2;
+    ST student3;
+    student1 = {"Allice", 'B', 82};
+    student2 = {"Mathew", 'A', 94};
+    student3 = {"Sara", 'A', 91};
+    
+    //call the class function per Object
+    student1.fcn11();
+    student2.fcn11();
+    student3.fcn11();
+
+    return 0;
+}
