@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+// Define a class to perform mathematical operations
+class MathOperations {
+public:
+    // Method to set the input values
+    void setInputValues(int a, int b) {
+        x = a;
+        y = b;
+    }
+
+    // Method to perform the calculations
+    void calculate() {
+        calculateFactorial();
+        calculateDivision();
+    }
+
+    // Method to get the factorial result
+    int getFactorial() {
+        return factorial;
+    }
+
+    // Method to get the division result
+    float getDivision() {
+        return division;
+    }
+
+private:
+    int x, y;
+    int factorial;
+    float division;
+
+    // Method to calculate the factorial
+    void calculateFactorial() {
+        factorial = 1;
+        for (int i = 1; i <= x; i++) {
+            factorial = factorial * i;
+        }
+    }
+
+    // Method to calculate the division
+    void calculateDivision() {
+        division = (float)y / x;
+    }
+};
+
+int main() {
+    cout << "User can provide 2 inputs here: ";
+    int x, y;
+    cin >> x;
+    cout << " ";
+    cin >> y;
+
+    // Create an object of MathOperations class
+    MathOperations mathOp;
+    // Set the input values
+    mathOp.setInputValues(x, y);
+    // Perform the calculations
+    mathOp.calculate();
+
+    // Output the results
+    cout << endl << "Factorial of " << x << " is: " << mathOp.getFactorial() << endl;
+    cout << "Division of " << y << " / " << x << " is: " << mathOp.getDivision() << endl;
+
+    return 0;
+}
