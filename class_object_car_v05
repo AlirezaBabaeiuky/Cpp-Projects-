@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std; 
+
+class car {
+    public:
+    string brand;
+    int year;
+    void fcncar11() { 
+        cout << "Car brand is: " << brand << " and car year is: " << year << endl;
+}
+};
+
+int main()
+{
+    // create an object of the class here: 
+    car carDSP;
+    cout << "What is car name? ";
+    cin >> carDSP.brand; 
+    cout << "\nWhat is the year of the car? ";
+    cin >> carDSP.year;
+    
+    carDSP.fcncar11();
+    
+    return 0;
+}
