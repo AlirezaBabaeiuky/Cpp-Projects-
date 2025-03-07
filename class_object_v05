@@ -1,0 +1,35 @@
+*******************************************************************************/
+#include <iostream>
+ 
+using namespace std; 
+
+class car { // 'class' is keyword to define the class and 'car' is the name of the class
+    public: // access specifier
+    string brand;
+    string durability;
+    string performance;
+    int maxspeed; 
+    int maxhp; // these are all: data MEMBERS
+    
+    // now we should define and declare the function inside the class to do its job
+    void fcncar11() {
+        cout << brand << " " << durability << " " << performance << " " << maxspeed << " " << maxhp << endl;
+    
+    }
+}; // do not forget this semicolon 
+
+// main fcn that is the entry point to any program 
+int main() { 
+    // Make an OBJECT of the CAR CLASS
+    car carDSP; 
+    carDSP.brand = "Mercedes_BENZ";
+    carDSP.durability = "Moderate_to_Low";
+    carDSP.performance = "Great";
+    carDSP.maxspeed = 300;
+    carDSP.maxhp = 500; 
+    
+    // call the function of the class here 
+    carDSP.fcncar11();
+    
+    return 0;
+}
