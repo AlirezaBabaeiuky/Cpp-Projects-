@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std; 
+class student { // student is class name
+    public: // access specifier 
+    string name;
+    int grade;
+    void studentinfo() {
+    cout << name << " " << grade << endl;     
+    }
+};
+int main()
+{
+    // make an object of the class 
+    student studentA; 
+    cout << "Enter student name and grade in order: " << endl;
+    cin >> studentA.name;
+    cout << " ";
+    cin >> studentA.grade;
+    
+    studentA.studentinfo(); 
+
+    return 0;
+}
