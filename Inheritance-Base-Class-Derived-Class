@@ -1,0 +1,52 @@
+// Inheritance.cpp 
+//This program (code snippet) demonstrates the usage of inheritance in C++ 
+
+#include <iostream> // Inlude the standard iostream library for input and output 
+
+using namespace std; // Use the standard namesapce to avoid prefixing std:: 
+
+// Base Class 
+class Animal {
+    public: 
+    // Method to display animal sound 
+    void makesound() { 
+        cout << "Animal sound" << endl; 
+    }
+}; 
+
+// Derived class inheriting from Animal 
+class Dog : public Animal { 
+    public:
+    // Method to make animal sound
+    void makesound() { 
+        cout << "Bark" << endl;
+}
+};
+
+// Another Derived class inheriting from Animal
+class Cat : public Animal {
+    public:
+    // Method to display animal sound:
+    void makesound() {
+        cout << "Meow" << endl;
+}
+}; 
+
+// main function is the entry point of the program 
+int main()
+{
+    // Creating Objects of Base and Derived / Inherited Classes 
+    Animal myAnimal; 
+    Dog myDog;
+    Cat myCat;
+    
+    // Calling the void-based functions to make the animal sounds 
+    cout << "Animal: ";
+    myAnimal.makesound(); 
+    cout << "Dog: ";
+    myDog.makesound(); 
+    cout << "Cat: ";
+    myCat.makesound();
+    
+    return 0;
+}
