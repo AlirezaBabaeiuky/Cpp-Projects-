@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector> // include vector for dynamic array 
+
+using namespace std; 
+
+class Student {
+    public: 
+    string name; 
+    int grade; 
+    void fcnst() {
+        cout << "Student name: " << name << " " << "Student grade: " << grade << endl;
+    }
+};
+
+int main()
+{
+    // first make an Object of Class 
+    //Student St; 
+    vector<Student> St = {{"Alex", 91}, {"Sara", 88}, {"David", 79}, {"Catherine", 86}}; 
+    //St.fcnst;
+    for (int i = 0; i < 4; i++) {
+        St[i].fcnst(); 
+    }
+
+    return 0;
+}
