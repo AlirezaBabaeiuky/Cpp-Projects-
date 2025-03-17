@@ -7,7 +7,7 @@
 using namespace std; // Use the standard namespace to avoid prefixing std::
 
 // Define a namespace called 'first'
-namespace first {
+namespace first { 
     void sayHello() {
         cout << "Hello from the first namespace!" << endl;
     }
