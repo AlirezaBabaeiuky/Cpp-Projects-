@@ -1,0 +1,51 @@
+// templates.cpp
+// This program demonstrates the usage of templates in C++
+
+#include <iostream> // Include the iostream library for input and output
+
+using namespace std; // Use the standard namespace to avoid prefixing std::
+
+// Function template for adding two values
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+// Class template
+template <typename T>
+class Calculator {
+private:
+    T num1, num2;
+
+public:
+    // Constructor
+    Calculator(T n1, T n2) : num1(n1), num2(n2) {}
+
+    // Method to add numbers
+    T add() {
+        return num1 + num2;
+    }
+
+    // Method to subtract numbers
+    T subtract() {
+        return num1 - num2;
+    }
+};
+
+// The main function is the entry point of the program
+int main() {
+    // Using the function template
+    cout << "Addition of integers: " << add<int>(5, 3) << endl;
+    cout << "Addition of doubles: " << add<double>(5.5, 3.3) << endl;
+
+    // Using the class template
+    Calculator<int> intCalc(10, 5);
+    cout << "Integer addition: " << intCalc.add() << endl;
+    cout << "Integer subtraction: " << intCalc.subtract() << endl;
+
+    Calculator<double> doubleCalc(10.5, 5.5);
+    cout << "Double addition: " << doubleCalc.add() << endl;
+    cout << "Double subtraction: " << doubleCalc.subtract() << endl;
+
+    return 0; // Return 0 to indicate successful completion
+}
