@@ -1,1 +1,36 @@
 
+// namespaces.cpp
+// This program demonstrates the usage of namespaces in C++
+
+#include <iostream> // Include the iostream library for input and output
+
+using namespace std; // Use the standard namespace to avoid prefixing std::
+
+// Define a namespace called 'first'
+namespace first {
+    void sayHello() {
+        cout << "Hello from the first namespace!" << endl;
+    }
+}
+
+// Define a namespace called 'second'
+namespace second {
+    void sayHello() {
+        cout << "Hello from the second namespace!" << endl;
+    }
+}
+
+// The main function is the entry point of the program
+int main() {
+    // Call the sayHello function from the 'first' namespace
+    first::sayHello();
+
+    // Call the sayHello function from the 'second' namespace
+    second::sayHello();
+
+    // Using a namespace alias
+    namespace fst = first;
+    fst::sayHello();
+
+    return 0; // Return 0 to indicate successful completion
+}
