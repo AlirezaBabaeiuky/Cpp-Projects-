@@ -1,0 +1,44 @@
+// file_io.cpp
+// This program demonstrates the usage of file input and output in C++
+
+#include <iostream>  // Include the iostream library for input and output
+#include <fstream>   // Include the fstream library for file operations
+
+using namespace std; // Use the standard namespace to avoid prefixing std::
+
+// The main function is the entry point of the program
+int main() {
+    // Create an ofstream object for writing to a file
+    ofstream outFile("example.txt");
+
+    // Check if the file is open
+    if (outFile.is_open()) {
+        // Write data to the file
+        outFile << "Hello, file!" << endl;
+        outFile << "Writing to a file in C++." << endl;
+
+        // Close the file
+        outFile.close();
+    } else {
+        cout << "Unable to open file for writing." << endl;
+    }
+
+    // Create an ifstream object for reading from a file
+    ifstream inFile("example.txt");
+    string line;
+
+    // Check if the file is open
+    if (inFile.is_open()) {
+        // Read data from the file line by line
+        while (getline(inFile, line)) {
+            cout << line << endl;
+        }
+
+        // Close the file
+        inFile.close();
+    } else {
+        cout << "Unable to open file for reading." << endl;
+    }
+
+    return 0; // Return 0 to indicate successful completion
+}
