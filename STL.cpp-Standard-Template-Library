@@ -1,0 +1,48 @@
+// stl.cpp
+// This program demonstrates the usage of the Standard Template Library (STL) in C++
+
+#include <iostream>  // Include the iostream library for input and output
+#include <vector>    // Include the vector library for using vectors
+#include <algorithm> // Include the algorithm library for using algorithms
+#include <map>       // Include the map library for using maps
+
+using namespace std; // Use the standard namespace to avoid prefixing std::
+
+// The main function is the entry point of the program
+int main() {
+    // Using a vector
+    vector<int> numbers = {1, 2, 3, 4, 5};
+
+    // Display the elements of the vector
+    cout << "Vector elements: ";
+    for (int num : numbers) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    // Using algorithms with vectors
+    sort(numbers.begin(), numbers.end(), greater<int>()); // Sort in descending order
+
+    // Display the sorted elements
+    cout << "Sorted vector elements: ";
+    for (int num : numbers) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    // Using a map
+    map<string, int> nameAgeMap;
+
+    // Inserting elements into the map
+    nameAgeMap["Alice"] = 30;
+    nameAgeMap["Bob"] = 25;
+    nameAgeMap["Charlie"] = 35;
+
+    // Display the elements of the map
+    cout << "Map elements:\n";
+    for (const auto& entry : nameAgeMap) {
+        cout << entry.first << ": " << entry.second << endl;
+    }
+
+    return 0; // Return 0 to indicate successful completion
+}
