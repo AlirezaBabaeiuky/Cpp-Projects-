@@ -33,5 +33,6 @@ int main() {
 
 
 /*
-In computer programming, a mutex (short for "mutual exclusion") is a synchronization primitive that allows only one thread or process to access a shared resource at a time, preventing data corruption and ensuring data consistency
+In computer programming, a mutex (short for "mutual exclusion") is a synchronization primitive that allows only one thread or process to access a shared resource at a time, preventing data corruption and ensuring data consistency.
+mutex& mtx is a reference to a mutex object used for synchronizing access to shared resources between threads, ensuring that only one thread can access the critical section at a time.
 */
