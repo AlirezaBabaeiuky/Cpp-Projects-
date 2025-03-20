@@ -34,3 +34,20 @@ int main() {
 
     return 0; // Return 0 to indicate successful completion
 }
+/*
+Explanation
+This example demonstrates the usage of lambda expressions in C++. Lambda expressions are a way to define anonymous functions directly in the code.
+
+Using a Lambda Expression to Print Numbers:
+
+The for_each algorithm is used to apply a lambda expression to each element in the numbers vector.
+The lambda expression [](int num) { cout << num << " "; } takes an integer num and prints it.
+Using a Lambda Expression to Count Even Numbers:
+
+The count_if algorithm is used to count the even numbers in the numbers vector.
+The lambda expression [](int num) { return num % 2 == 0; } takes an integer num and returns true if it is even.
+Using a Lambda Expression to Capture Variables:
+
+The for_each algorithm is used to apply a lambda expression to each element in the numbers vector, multiplying each number by a factor.
+The lambda expression [factor](int num) { cout << num * factor << " "; } captures the factor variable by value and multiplies each number by this factor before printing it.
+*/
