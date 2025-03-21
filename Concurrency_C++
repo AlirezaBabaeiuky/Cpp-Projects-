@@ -47,3 +47,14 @@ int main()
 
     return 0;   // end of program
 }
+
+
+/*
+Yes, mutex is the type (class) from <mutex> header, and lck is the name of the mutex object.
+No, getSum is a user-defined function, not built-in. It accepts (vector, start, end) as arguments.
+No, vector is a template class, not a keyword. Yes, you must define its type like vector<int> or vector<float>.
+& means "pass by reference". vector<int>& v avoids copying the vector, improving performance.
+lock_guard<mutex> is a template class (not a keyword) that locks a mutex when created and automatically unlocks when destroyed.
+mu(lck) means: create a lock_guard object named mu and lock lck mutex.
+mu is the name of the lock_guard object, and lck is passed into it to lock.
+*/
