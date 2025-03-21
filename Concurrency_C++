@@ -65,5 +65,17 @@ With &, the function works on the same vector in memory.
 
 v refers to the original vector, not a duplicate.
 Faster and more efficient.
+In getSum(const vector<int>& v, ...) — const means:
+
+➡️ "This function will not modify the vector v."
+
+Why use const?
+Protects the data (accidental changes avoided).
+Allows passing temporary or read-only vectors.
+Better practice when you're only reading data.
+✅ Summary:
+
+const = read-only.
+Improves safety, clarity, and performance.
 
 */
