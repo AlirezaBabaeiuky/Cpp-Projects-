@@ -57,4 +57,13 @@ No, vector is a template class, not a keyword. Yes, you must define its type lik
 lock_guard<mutex> is a template class (not a keyword) that locks a mutex when created and automatically unlocks when destroyed.
 mu(lck) means: create a lock_guard object named mu and lock lck mutex.
 mu is the name of the lock_guard object, and lck is passed into it to lock.
+& in vector<int>& v means "pass by reference".
+It refers to the original vector, not a copy.
+Without &, the function gets a copy, which is slower and uses more memory.
+With &, the function works on the same vector in memory.
+✅ So:
+
+v refers to the original vector, not a duplicate.
+Faster and more efficient.
+
 */
