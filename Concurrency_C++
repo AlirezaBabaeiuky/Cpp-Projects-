@@ -1,0 +1,49 @@
+#include <iostream>    // for input/output (cout)
+#include <mutex>       // for using mutex (lock for threads)
+#include <thread>      // to use threads
+#include <vector>      // to use vector container
+using namespace std;   // avoid prefixing std:: everywhere
+
+int sum = 0;           // shared variable to hold total sum
+
+mutex lck;             // mutex to protect 'sum' from race conditions
+
+// function to compute partial sum from vector between start and end
+void getSum(const vector<int>& v, int start, int end)
+{
+    lock_guard<mutex> mu(lck);  // locks mutex automatically, unlocks when function exits
+
+    for (int i = start; i <= end; i++) {  // iterate from start to end index
+        sum += v[i];                      // add each element to shared sum
+    }
+    // mutex is automatically released here (when lock_guard goes out of scope)
+}
+
+int main()
+{
+    // initialize vector with 10 integer elements
+    vector<int> v = { 2, 4654, 321, 65, 32, 165, 432, 2, 16, 54 };
+
+    int mid = v.size() / 2;    // find midpoint index to split vector into two halves
+
+    // create first thread to sum first half of the vector
+    thread t1(getSum, v, 0, mid);
+
+    // create second thread to sum second half of the vector
+    thread t2(getSum, v, mid + 1, v.size() - 1);
+
+    t1.join();   // wait for thread t1 to finish
+    t2.join();   // wait for thread t2 to finish
+
+    // print vector elements
+    cout << "Array Elements: ";
+    for (auto i : v) {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    // print the final sum result
+    cout << "Sum: " << sum;
+
+    return 0;   // end of program
+}
