@@ -1,0 +1,18 @@
+#include <iostream>
+#include<cmath>
+using namespace std; 
+
+int main()
+{
+    auto res = [](int x) { 
+        return pow(x, 2); 
+    }; 
+    
+    cout << "user: please provie an integer number here: ";
+    int num; 
+    cin >> num; 
+    int result = res(num); 
+    cout << result << endl; 
+
+    return 0;
+}
