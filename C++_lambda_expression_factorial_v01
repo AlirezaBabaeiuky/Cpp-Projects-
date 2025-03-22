@@ -1,0 +1,22 @@
+#include <iostream>
+# include <cmath>
+using namespace std; 
+
+int main()
+{
+    auto lambdaexp = [](int num) {
+        int fac=1; 
+        for (int i=1; i<=num; i++){
+            fac = fac*i; 
+        }
+        return fac; 
+    }; 
+    cout << "User needs to provide an integer number to calculate the factorial of that: " << endl;
+    int N; 
+    cin >> N; 
+    int result; 
+    result = lambdaexp(N); 
+    cout << "Factorial of " << N << " is: " << result << endl;
+
+    return 0;
+}
