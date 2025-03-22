@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std; 
+
+int main()
+{
+    auto res = [] (int x) {
+    return x*2; 
+    };
+    cout << res(12) << endl;
+
+    return 0;
+}
