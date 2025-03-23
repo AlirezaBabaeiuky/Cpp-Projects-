@@ -1,0 +1,74 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+// OOP (Object_Oriented_Programming) - Encapsulation and Inheritance 
+# include <iostream>
+# include <string>
+
+using namespace std; 
+
+class Car { 
+    private: 
+    string Name;
+    int Year; 
+    
+    public: 
+    // Constructor to initialize the class object called: 'Car' 
+    Car(string name, int year) { 
+    Name = name; 
+    Year = year; 
+    }
+    void DisplayInfo() { 
+        cout << Name << endl;
+        cout << Year << endl; 
+    }
+    void UpdateInfo(string name, int year) { 
+        Name = name; 
+        Year = year; 
+    }
+};
+// Derived class from Base class 
+class SportsCar : public Car {
+    private:
+    int TopSpeed; // Additional member variable for SportsCar
+    public: 
+    // Constructor to initialize the SportsCar object, including Base class members 
+    SportsCar(string name, int year, int topspeed) 
+    : Car(name, year), TopSpeed(topspeed) {} 
+    // public method to display sports car information
+    void DisplaySportsCarInfo() { 
+        DisplayInfo(); // Call base class method 
+        cout << "Top Speed: " << TopSpeed << " km/h " << endl; 
+}
+
+// public method to update the sport's top speed 
+void SetTopSpeed (int topspeed) {
+    TopSpeed = topspeed; 
+}
+    
+}; 
+
+
+int main()
+{
+    // first make an object of the 'Car' class 
+    Car DSP("BMW", 2015); // DSP is Base class's object name  
+    DSP.DisplayInfo(); // call the void-based function to display the details of the Car Object (DSP)
+    DSP.UpdateInfo("Lexus", 2018); 
+    DSP.DisplayInfo(); 
+    // no make an object for the Base class 
+    SportsCar FastCar("Ferrari", 2011, 350); 
+    // call the display method/function to display details 
+    FastCar.DisplaySportsCarInfo(); 
+    // update/modify sports car object top speed here 
+    FastCar.SetTopSpeed(380); 
+    // call th edisplay functoin over the derived class object 
+    FastCar.DisplaySportsCarInfo(); 
+
+    return 0;
+}
