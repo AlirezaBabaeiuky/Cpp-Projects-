@@ -69,3 +69,41 @@ int main() {
 
     return 0;
 }
+
+/* 
+#include <iostream>
+# include <string>
+
+using namespace std; 
+
+class Car { 
+    private: 
+    string Name;
+    int Year; 
+    
+    public: 
+    Car(string name, int year) { 
+    Name = name; 
+    Year = year; 
+    }
+    void DisplayInfo() { 
+        cout << Name << endl;
+        cout << Year << endl; 
+    }
+    void UpdateInfo(string name, int year) { 
+        Name = name; 
+        Year = year; 
+    }
+};
+
+int main()
+{
+    // first make an object of the 'Car' class 
+    Car DSP("BMW", 2015); 
+    DSP.DisplayInfo();
+    DSP.UpdateInfo("Lexus", 2018);
+    DSP.DisplayInfo(); 
+
+    return 0;
+}
+*/
