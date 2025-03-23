@@ -37,7 +37,7 @@ public: // Access modifier - members under public can be accessed directly outsi
         }
     }
 
-    // Public method to update the car's information
+    // Public method to update the car's information --> which is another initializer 
     void SetInfo(string name, string ownername, int year, int array[3][2]) {
         Name = name;
         OwnerName = ownername;
