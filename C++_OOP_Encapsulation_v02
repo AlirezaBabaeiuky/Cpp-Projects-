@@ -7,78 +7,56 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 #include <iostream>
-# include <string>
-
-using namespace std; 
+#include <string>
+using namespace std;
 
 class Car {
-    private: // access specifier / modifier 
-    string Name; // private member nane and type 
-    string OwnerName; 
+private:
+    string Name;
+    string OwnerName;
     int Year;
-    int arr[3][2]; 
-    
-    public: 
-    // Constructor to initialize the class under name: 'Car'
-    Car(string name, string ownername, int year, int array[2][3]) { 
+    int arr[3][2];
+
+public:
+    Car(string name, string ownername, int year, int array[3][2]) {
         Name = name;
-        OwnerName = ownername; 
-        Year = year; 
-        for (int i=0; i<3; i++) { 
-            for (int j=0; j<2; j++) { 
+        OwnerName = ownername;
+        Year = year;
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 2; j++)
                 arr[i][j] = array[i][j];
-            }
+    }
+
+    void GetInfo() {
+        cout << "Car Name: " << Name << endl;
+        cout << "Owner: " << OwnerName << endl;
+        cout << "Year: " << Year << endl;
+        cout << "Matrix:\n";
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 2; j++)
+                cout << arr[i][j] << " ";
+            cout << endl;
         }
     }
-        // public method to get/display car information 
-        void GetInfo() { 
-            cout << "name of the car is: " << Name << endl;
-            cout << "name of the owner of the car is: " << OwnerName << endl; 
-            cout << "year of the cae is: " << Year << endl; 
-            cout << "Array/Matrix elements are: " << endl;
-            
-            for (int i = 0; i<3; i++) {
-                for (int j=0; j<2; j++) { 
-                    cout << arr[i][j] << " ";
-                }
-                cout << endl;
-            }
-            
-            // public method to modify/update car information 
-            void SetInfo(string name, string ownername, int year, int array[3][2]) {
-                Name = name; 
-                OwnerName = ownername; 
-                Year = year; 
-                for (int i=0; i<3; i++) { 
-                    for (int j=0; j<2; j++) { 
-                        arr[i][j] = array[i][j];
-                    }
-                }
-            }
-}; // always finish the class with }; 
 
+    void SetInfo(string name, string ownername, int year, int array[3][2]) {
+        Name = name;
+        OwnerName = ownername;
+        Year = year;
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 2; j++)
+                arr[i][j] = array[i][j];
+    }
+};
 
+int main() {
+    int arr1[3][2] = {{1,2},{3,4},{5,6}};
+    Car DealerCars("Lexus", "Alex", 2016, arr1);
+    DealerCars.GetInfo();
 
-int main()
-{
-    int arr[3][2] = {{1, 2}, {3, 4}, {5, 6}}; 
-    
-    // Define the object of the car class and initialize using the constructor 
-    Car DealerCars; 
-    DealerCars.Name = "Lexus";
-    DealerCars.OwnerName = "Alex"; 
-    DealerCars.Year = 2016; 
-    DealerCars.arr; 
-    
-    DealerCars.GetInfo(); 
-    
-    int Newarr[3][2] = {{7, 8}, {9, 20}, {11, 12}}; 
-    DealerCars.SetInfo() { 
-        DealerCars.Name = "Benz";
-        DealerCars.OwnerName = "Allicia";
-        DealerCars.Year = 2025; 
-        DealerCars.GetInfo(); 
-}
+    int arr2[3][2] = {{7,8},{9,10},{11,12}};
+    DealerCars.SetInfo("Benz", "Alicia", 2025, arr2);
+    DealerCars.GetInfo();
+
     return 0;
-}    
-
+}
