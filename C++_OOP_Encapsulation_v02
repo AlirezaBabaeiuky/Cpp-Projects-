@@ -1,61 +1,70 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <iostream>
 #include <string>
 using namespace std;
 
+// Class represents a template (blueprint) and object is an instance of that class with features
 class Car {
-private:
-    string Name;
+private: // Access modifier - members under private cannot be accessed directly outside the class
+    string Name;   // Define the members of the class types here and variable names
     string OwnerName;
     int Year;
     int arr[3][2];
 
-public:
+public: // Access modifier - members under public can be accessed directly outside the class
+    // Constructor to initialize the Car object
     Car(string name, string ownername, int year, int array[3][2]) {
         Name = name;
         OwnerName = ownername;
         Year = year;
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 2; j++)
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 2; ++j) {
                 arr[i][j] = array[i][j];
+            }
+        }
     }
 
+    // Public method to get information of the car
     void GetInfo() {
         cout << "Car Name: " << Name << endl;
-        cout << "Owner: " << OwnerName << endl;
+        cout << "Owner Name: " << OwnerName << endl;
         cout << "Year: " << Year << endl;
-        cout << "Matrix:\n";
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 2; j++)
+        cout << "Array Elements: " << endl;
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 2; ++j) {
                 cout << arr[i][j] << " ";
+            }
             cout << endl;
         }
     }
 
+    // Public method to update the car's information
     void SetInfo(string name, string ownername, int year, int array[3][2]) {
         Name = name;
         OwnerName = ownername;
         Year = year;
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 2; j++)
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 2; ++j) {
                 arr[i][j] = array[i][j];
+            }
+        }
     }
 };
 
 int main() {
-    int arr1[3][2] = {{1,2},{3,4},{5,6}};
-    Car DealerCars("Lexus", "Alex", 2016, arr1);
+    // Array to initialize the car's array
+    int arr[3][2] = {{1, 2}, {3, 4}, {5, 6}};
+
+    // Define the object of 'Car' class and initialize it using the constructor
+    Car DealerCars("Lexus", "Alex", 2016, arr);
+    
+    // Call the GetInfo method to display the car's details
     DealerCars.GetInfo();
 
-    int arr2[3][2] = {{7,8},{9,10},{11,12}};
-    DealerCars.SetInfo("Benz", "Alicia", 2025, arr2);
+    // Update the car's information
+    int newArr[3][2] = {{7, 8}, {9, 10}, {11, 12}};
+    DealerCars.SetInfo("Toyota", "Alice", 2020, newArr);
+
+    // Call the GetInfo method again to display the updated car's details
     DealerCars.GetInfo();
 
     return 0;
