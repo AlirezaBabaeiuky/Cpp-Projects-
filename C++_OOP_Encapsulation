@@ -1,0 +1,91 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Class represents a template (blueprint) and object is an instance of that class with features
+class Car {
+private: // Access modifier - members under private cannot be accessed directly outside the class
+    string Name;   // Define the members of the class types here and variable names
+    string OwnerName;
+    int Year;
+    int arr[3][2];
+
+public: // Access modifier - members under public can be accessed directly outside the class
+    // Constructor to initialize the Car object
+    Car(string name, string ownername, int year, int array[3][2]) {
+        Name = name;
+        OwnerName = ownername;
+        Year = year;
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 2; ++j) {
+                arr[i][j] = array[i][j];
+            }
+        }
+    }
+
+    // Public method to get information of the car
+    void GetInfo() {
+        cout << "Car Name: " << Name << endl;
+        cout << "Owner Name: " << OwnerName << endl;
+        cout << "Year: " << Year << endl;
+        cout << "Array Elements: " << endl;
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 2; ++j) {
+                cout << arr[i][j] << " ";
+            }
+            cout << endl;
+        }
+    }
+
+    // Public method to update the car's information
+    void SetInfo(string name, string ownername, int year, int array[3][2]) {
+        Name = name;
+        OwnerName = ownername;
+        Year = year;
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 2; ++j) {
+                arr[i][j] = array[i][j];
+            }
+        }
+    }
+};
+
+int main() {
+    // Array to initialize the car's array
+    int arr[3][2] = {{1, 2}, {3, 4}, {5, 6}};
+
+    // Define the object of 'Car' class and initialize it using the constructor
+    Car DealerCars("Lexus", "Alex", 2016, arr);
+    
+    // Call the GetInfo method to display the car's details
+    DealerCars.GetInfo();
+
+    // Update the car's information
+    int newArr[3][2] = {{7, 8}, {9, 10}, {11, 12}};
+    DealerCars.SetInfo("Toyota", "Alice", 2020, newArr);
+
+    // Call the GetInfo method again to display the updated car's details
+    DealerCars.GetInfo();
+
+    return 0;
+}
+/*
+Explanation and Comments:
+Class Definition and Access Specifiers:
+
+The Car class has members Name, OwnerName, Year, and arr which are defined under the private access specifier to encapsulate the data.
+The public access specifier allows methods like GetInfo and SetInfo to be accessible outside the class.
+Constructor:
+
+The constructor Car(string name, string ownername, int year, int array[3][2]) initializes the car's name, owner name, year, and array elements.
+Public Methods:
+
+GetInfo() method displays the car's details.
+SetInfo() method allows updating the car's details.
+Main Function:
+
+An object DealerCars of class Car is created and initialized using the constructor.
+The GetInfo method is called to display the initial car details.
+The SetInfo method is called to update the car's details.
+The GetInfo method is called again to display the updated car details.
+*/
