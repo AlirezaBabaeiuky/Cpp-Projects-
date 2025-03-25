@@ -1,0 +1,46 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+using namespace std; 
+
+class numbers {
+    // always first specify the class access specifier / modifier 
+    private: 
+    int a; // class member type 
+    int paa; // class member type
+    int paaa; 
+    
+    public :
+    void fcn1(int aa) { // should be defined / declared inside the class scope
+    // should be with int a inside as passing the input parameters/arguments 
+    a = aa; 
+    paa = a*a;
+    paaa = a*a*a; 
+    cout << paa << endl; 
+    cout << paaa << endl; 
+} // this void function is to be defined inside the class with this syntax 
+// make the friend fcn here: 
+friend void friendfcn1(numbers N); 
+};
+
+// making a friend function 
+void friendfcn1(numbers N) {
+    cout << "results from friend fcn: " << N.paa << endl; // note the syntax: paa.N where N is object 
+    cout << "results from friend fcn: " << N.paaa << endl; 
+}
+
+int main()
+{
+    // first make an object of the class 
+    numbers N; 
+    N.fcn1(10); // invoke the function  --- method 1 
+    friendfcn1(N); 
+
+    return 0;
+}
