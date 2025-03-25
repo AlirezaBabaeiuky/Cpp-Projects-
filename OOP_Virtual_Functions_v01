@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std; 
+
+class Instrument { 
+    public: // make it accesible outside the class 
+    virtual void MakeSound() { // keep in mind to invoke this function we need to first make an object of this function in the main body of the code  
+        cout << "Instrument playing ... \n";  
+    }
+};
+// make a derived class from base class - inheritance
+class Accordion : public Instrument { // now lets make another implementation 
+    void MakeSound() { 
+        cout << "Accordion playing ... \n";
+    }
+};
+int main()
+{
+    //Instrument i1; // now i1 as object of instrument class can be invoked 
+    //i1.MakeSound();
+    // make a pointer to the base class as function MakeSound is shown in both: base and derived classes 
+    Instrument* i1 = new Accordion(); // note that Instrument is base class and Accordian is derived class  
+    i1->MakeSound(); // -> is used to access members of the MakeSound function !!! 
+
+    return 0;
+}
