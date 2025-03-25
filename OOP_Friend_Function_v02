@@ -44,3 +44,61 @@ int main()
 
     return 0;
 }
+
+/*
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std; 
+
+class cname {
+    private : // private means that members cannot be accessed outside the class 
+    int a; // class member data type 
+    int pa;
+    int paa; 
+    int fac;
+    public: // defining the function under public access specifier means we can access the function outside class
+    void fcn1 (int number) {
+        a = number; 
+        pa = a*a;
+        paa = a*a*a;
+        fac = 1; // initialize fac first
+        for (int i=1; i<=fac; i++) { 
+            fac = fac*i; 
+        } // curly bracket to end the for loop 
+        cout << a << endl; 
+        cout << pa << endl; 
+        cout << paa << endl; 
+        cout << fac << endl;
+        // now you can invoke this fcn1 function in the main body of the program 
+    }
+    friend void friendfcn1(cname N); 
+    
+    
+}; // do not forget this semicolon for the ending curly bracket of the class 
+// another method is to use friend function to access the private section in the class 
+void friendfcn1(cname N) {
+    cout << "friend fcn: " << N.a << endl;
+    cout << "friend fcn: " << N.pa << endl;
+    cout << "friend fcn: " << N.paa << endl;
+    cout << "friend fcn: " << N.fac << endl; 
+}
+
+int main()
+{
+    // in the main body of the program, first define the Object of the class 
+    cname N; // N is the object of class titled: cname 
+    // below is syntax for invoking the class function
+    N.fcn1(3);
+    // below is invoking the friend fcn 
+    friendfcn1(N);
+
+    return 0;
+}
+*/
