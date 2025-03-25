@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std; 
+
+class Smartphone {
+    public: 
+    virtual void TakeASelfie() = 0; // this is abstract, you need to implement it in your own derived classes  
+}; // now the class Smartphone is now an ABSTRACT class 
+/* side notes about abstract classes: we cannot make instances but we can make pointers of abstrat classes
+and Smartphone class will not provide implementations for TakeASelfie fcn. now interface (abstracted layer) is created.
+
+*/
+class Android : public Smartphone { // derived class called: Android 
+public: 
+void TakeASelfie() {
+    cout << "Android selfie\n"; 
+}
+};
+class IPhone : public Smartphone { 
+    void TakeASelfie() { 
+        cout << "IPhone selfie\n"; 
+    }
+};
+
+int main()
+{
+    Smartphone* s1 = new Android();
+    s1 -> TakeASelfie(); 
+Smartphone* s2 = new IPhone();
+    s2 -> TakeASelfie(); 
+    return 0; // or: system("pause>0"); 
+}
+/* make a class as interface while hiding all details and complex parts
+make a class, provide interface so that anyone using my class does not need to know details of my complex details of how certain functionality and implementations are made, coffe machine example 
+*/ 
