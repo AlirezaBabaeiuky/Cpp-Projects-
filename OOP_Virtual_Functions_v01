@@ -1,3 +1,5 @@
+// virtual pure virtual abstract functions 
+
 #include <iostream>
 using namespace std; 
 
@@ -19,7 +21,7 @@ int main()
     //i1.MakeSound();
     // make a pointer to the base class as function MakeSound is shown in both: base and derived classes 
     Instrument* i1 = new Accordion(); // note that Instrument is base class and Accordian is derived class  
-    i1->MakeSound(); // -> is used to access members of the MakeSound function !!! 
+    i1->MakeSound(); // -> is used to access members of the MakeSound function !!! if this was an object '.' shouldb used. 
 
     return 0;
 }
