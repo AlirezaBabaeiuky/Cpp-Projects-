@@ -1,0 +1,36 @@
+// virtual pure virtual abstract functions 
+
+#include <iostream>
+using namespace std; 
+
+class Instrument { 
+    public: // make it accesible outside the class 
+    /* virtual void MakeSound() { // keep in mind to invoke this function we need to first make an object of this function in the main body of the code  
+        cout << "Instrument playing ... \n";  
+    }
+*/
+// to make the above pure virtual do this: = 0 , and the MakeSound is called: Pre virtual function . this pur evirtual function and abstract class forces all 
+//the derived classes to make their own implementations of MakeSound function 
+virtual void MakeSound() = 0; 
+};
+// make a derived class from base class - inheritance
+class Accordion : public Instrument { // now lets make another implementation 
+    void MakeSound() { 
+        cout << "Accordion playing ... \n";
+    }
+};
+int main()
+{
+    //Instrument i1; // now i1 as object of instrument class can be invoked 
+    //i1.MakeSound();
+    // make a pointer to the base class as function MakeSound is shown in both: base and derived classes 
+    Instrument* i1 = new Accordion(); // note that Instrument is base class and Accordian is derived class  
+    i1->MakeSound(); // -> is used to access members of the MakeSound function !!! if this was an object '.' shouldb used. 
+
+    return 0;
+}
+
+/*
+note that the function MakeSound is used in both base and derived classes - it has the same implementation though.
+You need to use virtual and pointer to make the implementation happen in the most derived version class! and note instead of object we created a pointer to the base class.
+*/
