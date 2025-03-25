@@ -1,0 +1,68 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Define a structure named YouTubeChannel
+struct YouTubeChannel { 
+    string Name; // Adding attribute to the structure
+    int SubscribersCount; // Attributes are public by default (accessible outside the structure)
+
+    // Constructor to initialize the structure
+    YouTubeChannel(string name, int subscriberscount) { 
+        Name = name; // Initialization step of attributes
+        SubscribersCount = subscriberscount; 
+    }
+
+    // Method to print the YouTube channel details
+    void print2() { 
+        cout << Name << endl; 
+        cout << SubscribersCount << endl; 
+    }
+}; 
+
+// Function to overload the insertion operator (<<) for YouTubeChannel structure
+void operator << (ostream& COUT, YouTubeChannel& ytchannel) { 
+    // & means we are passing the parameters by reference, meaning passing the original not a copy
+    COUT << ytchannel.Name << endl; 
+    COUT << ytchannel.SubscribersCount << endl; 
+}
+
+int main() {
+    // Creating an object of YouTubeChannel type
+    YouTubeChannel yt1 = YouTubeChannel("CodeBeauty", 75000); 
+    
+    cout << 5 << endl; // Prints the integer 5
+
+    // Using the overloaded insertion operator to print the details of yt1
+    cout << yt1; // yt1 is user-defined data type, by overloading the << operator, we tell the compiler how to handle it
+
+    cout << endl; // Prints a newline
+
+    // Define Name and SubscribersCount, then make an object of the structure, then call objectname.print2();
+    // This demonstrates the usage of the print2() method
+
+    return 0;
+}
+
+/* 
+Explanation and Comments:
+Structure Definition:
+
+The YouTubeChannel structure is defined with attributes Name and SubscribersCount.
+The constructor YouTubeChannel(string name, int subscriberscount) initializes these attributes.
+Method print2():
+
+The print2() method is defined to print the details of the YouTube channel.
+Operator Overloading:
+
+The operator << function is used to overload the insertion operator << for the YouTubeChannel structure.
+This allows the cout << yt1 statement to work, where yt1 is an object of the YouTubeChannel structure.
+By overloading the << operator, we tell the compiler how to handle our user-defined data type when it is used with cout.
+Main Function:
+
+An object yt1 of the YouTubeChannel type is created and initialized.
+The overloaded << operator is used to print the details of yt1.
+cout << endl; prints a newline for better output formatting.
+Corrected Comments:
+The comments in the code have been kept and corrected for clarity and accuracy.
+*/
