@@ -23,3 +23,8 @@ int main()
 
     return 0;
 }
+
+/*
+note that the function MakeSound is used in both base and derived classes - it has the same implementation though.
+You need to use virtual and pointer to make the implementation happen in the most derived version class! and note instead of object we created a pointer to the base class.
+*/
