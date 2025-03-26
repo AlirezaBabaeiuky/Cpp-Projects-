@@ -1,0 +1,50 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+// Parametrized Constructors - received arguments / parameters to instanciate the properties/members of the object   
+#include <iostream>
+# include <string>
+using namespace std; 
+
+class User { 
+    public: // access modifier/specifier - first thinkg you need to do for making a class
+    string FirstName; 
+    string LastName; 
+    int Age; 
+    string Email; 
+    
+    // c: has same name as class, does not receive parameters, does not return anything, should be placed in public part of class, 
+    // if not create your own c, cpp will create a defauly for you, default c is automatically invoked everytime that you create object of class 
+    User(string fName, string lName, int age) { // this is c (constructor) - this is parametrized c 
+    FirstName = fName; // here we are initializing the class members (instanciating)
+    LastName = lName; // here we are ... 
+    Age = age; 
+    Email = fName+"."+lName+"@Gmail.com"; 
+    }
+}; // do not forget this semicolon to end the class 
+
+// create a non-member fcn 
+void GetUserInfo(User u) { // a better way to re-use code 
+    cout << "Firs Name: " << u.FirstName << endl; 
+    cout << "Last Name: " << u.LastName << endl; 
+    cout << "Age: " << u.Age << endl; 
+    cout << "Email: " << u.Email << endl;
+}
+
+// even if we do not initialize the class members, by default they will be initialized 
+// constructors resemble functions in syntax, with one difference that: constructor should have the same name as the class they belong to 
+// every fcn needs to have a return type, constructors do not have any return types. c should be placed in the public area of class. c does not have
+// any parameters. if you do not create your own c, cpp will create one for you. defaukt c is invoked once we create an object of that class.   
+int main() // main function coming with int is the entry point of the prgoram 
+{
+    User user1("Alex", "Rosey", 38); // user1 is an instance / objct of class User 
+    User user2("Alicia", "Rosey", 35);
+    GetUserInfo(user1); 
+    GetUserInfo(user2); 
+
+    return 0;
+}
