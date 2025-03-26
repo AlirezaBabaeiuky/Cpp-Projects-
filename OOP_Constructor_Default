@@ -1,0 +1,43 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+// Default Constructors 
+#include <iostream>
+# include <string>
+using namespace std; 
+
+class User { 
+    public: // access modifier/specifier - first thinkg you need to do for making a class
+    string FirstName; 
+    string LastName; 
+    int Age; 
+    string Email; 
+    
+    // c: has same name as class, does not receive parameters, does not return anything, should be placed in public part of class, 
+    // if not create your own c, cpp will create a defauly for you, default c is automatically invoked everytime that you create object of class 
+    User() { // this is c (constructor) - this is default c 
+    FirstName = "nn"; 
+    LastName = "nn";
+    Age = 0; 
+    Email = "not set"; 
+    }
+}; // do not forget this semicolon to end the class 
+
+// even if we do not initialize the class members, by default they will be initialized 
+// constructors resemble functions in syntax, with one difference that: constructor should have the same name as the class they belong to 
+// every fcn needs to have a return type, constructors do not have any return types. c should be placed in the public area of class. c does not have
+// any parameters. if you do not create your own c, cpp will create one for you. defaukt c is invoked once we create an object of that class.   
+int main() // main function coming with int is the entry point of the prgoram 
+{
+    User user1; // user1 is an instance / objct of class User 
+    cout << "Firs Name: " << user1.FirstName << endl; 
+    cout << "Last Name: " << user1.LastName << endl; 
+    cout << "Age: " << user1.Age << endl; 
+    cout << "Email: " << user1.Email << endl; 
+
+    return 0;
+}
