@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std; 
+
+class Book { 
+    public: 
+    string Title; 
+    string Author;
+    float* Rates; 
+    int RatesCounter; 
+    
+    // parametrised constructor 
+    Book(string title, string author) { // passing parameters as arguments to the contructor 
+        Title = title; // assing the parameter to the class member 
+        Author = author; // author is a parameter we recieved in constructor so then assign it tp the class member 
+        
+        // Hard-coding two rates for the book 
+        RatesCounter = 2; 
+        Rates = new float[RatesCounter];
+        Rates[0] = 5; 
+        Rates[1] = 4; 
+        //cout << Title + "constructor invoked\n"; 
+
+    }
+    // copy-ctor should be in: public area of class, it does not have return type, it has the same name of class it belongs to, 
+    // it wil receive one parameter (of same type of the class it belongs to). 
+    
+    // Question: why to use destructor? to release all the memory being occupied by constructor. and why to release? o that other applications 
+    // can re-use it.  
+    
+    // destructor - it is important to create custom destructor when working with pointers and whenever allocating new memory in your constructor
+    // in such cases we need to have desctructor to deallocate or relaease that mempry so that other applications can re-use it. (risks: memory leaks 
+    // and other errors in the code). 
+    ~Book() { // this is destructor 
+        delete[]Rates; 
+        Rates = nullptr; 
+    }
+       // cout << Title + "destructor invoked\n"; 
+       Book(const Book& original) { // original is passed to copy-stor to create new object.   
+           Title = original.Title;
+           Author = original.Author;
+           //Rates = original.Rates; 
+           RatesCounter = original.RatesCounter;
+                   Rates = new float[RatesCounter];
+        for (int i=0; i< RatesCounter; i++) {
+            Rates[i] = original.Rates[i]; 
+        }
+       }
+    
+    // pass an object by reference or by value 
+    
+    // how to pass an object to a fcn: 2 ways: pass it by reference or pass it by value. 
+    // if passing by reference: use ampersand symbol (&) meaning passing the original object not a copy to the compiler (good for memory) 
+    //and pointer is needed. but if passing without & it makes a copy of that object and then pass it to function    
+    // destructor notes: start des with tilde sign ~, nane of des is same as class, does not have return type (fcns DO), does not receive any 
+    // parameters, this is a member fcn of the class, should be in the public area of class, only des is allowed per class (while multiple 
+    //c are allowed per class).  
+}; // destructors are at the end of class 
+// c and des are both in the public section of class 
+
+int main()
+{
+    Book book1("Millionaire Fastlane", "M. J.DeMarco"); 
+    Book book2("C++ Lambda Story", "Bartek Filipek"); 
+    Book book3(book1); // copying anyting in book1 into book3 - this is copying constructor 
+    // just like constructor, we also have default copy-ctor; but as soon as we have pointer we NEED to define our own copy-ctor. 
+    cin.get();
+    
+
+    //return 0;
+}
