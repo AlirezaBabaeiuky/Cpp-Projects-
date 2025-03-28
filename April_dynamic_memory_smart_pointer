@@ -1,0 +1,35 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+# include <memory> 
+
+using namespace std;  
+
+class A {
+    public: // class name is A and we may call it as object as well  
+    void printA() {cout << "A struct ... " << endl; // this is method (fcn) to be called in the main code block
+    }
+}; 
+
+int main()
+{
+    unique_ptr<A> p1(new A); // here: unique_ptr is smart pointer to avoid memory leakage <A> is class or object name
+    // p1 is the name of the owner of class A as it goes out of scope all A will be destroyed 
+    // let's call the fcn 
+    p1->printA(); 
+    cout << "AAdress of the containing pointer: " << p1.get() << endl;
+    // now to copy the address stored in p1 should be copied to p2 using MOVING SEMANTICS
+    unique_ptr<A> p2 = move(p1); 
+    p2->printA(); 
+    cout << p1.get() << endl;
+    cout << p2.get() << endl; 
+    
+    
+    return 0;
+}
