@@ -22,8 +22,9 @@ class Complex { // Complex is class name
     Complex operator+ (Complex const& obj) { // this is syntax for Operator Overloading 
     // return_type operator (as keyword) + (operator symbol/sign) (arguments )
     // const& obj means that obj references to Complex to avoid copying to use minimum memory to use original  
-    Complex res; 
-    res.real = real + obj.real;
+    // Operator Overloading Function 
+    Complex res; // defining a variable of type Complex class, to store resutls 
+    res.real = real + obj.real; // real and imag both belong to calling object (c1) defined in the Complex class!
     res.imag = imag + obj.imag;
     return res; 
     }
@@ -35,8 +36,20 @@ class Complex { // Complex is class name
 
 int main()
 {
-    Complex c1(10, 20), c2(100, 200); 
+    Complex c1(10, 20), c2(100, 200); // c1 and c2 are objects of class called/entitled: 'Complex'
+    // eac object receives 2 arguments. 
     Complex c3 = c1+c2;
     c3.print();
     return 0;
 }
+
+/* side notes:
+Complex is name of the class, and in line of: overloading operator: Complex is return type of the operator
+(Complex const& obj): Complex here is the parameter type (another Complex object).
+const ensures the second operand (obj) is not modified. 
+& passes obj by reference to avoid unnecessary copying.
+in C++, a class can act as a data type. Complex is a user-defined type. res is an object of type Complex. 
+so Complex res; creates an instance of Complex with default values. 
+
+*/
+
