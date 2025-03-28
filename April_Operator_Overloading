@@ -1,0 +1,42 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream> 
+using namespace std; 
+
+class Complex { // Complex is class name  
+    private: // access specifier / modifier 
+    int real, imag; // member data type 
+    public: 
+    Complex(int r = 0, int j = 0) { // Constructor of class - 
+    // this constructor i sparametrised meaning we can pass arguments to initialize the class objects / variables 
+    real = r; 
+    imag = j; 
+    }
+    // this is automatically called/invoked when '+' is used with between two Complex objects 
+    Complex operator+ (Complex const& obj) { // this is syntax for Operator Overloading 
+    // return_type operator (as keyword) + (operator symbol/sign) (arguments )
+    // const& obj means that obj references to Complex to avoid copying to use minimum memory to use original  
+    Complex res; 
+    res.real = real + obj.real;
+    res.imag = imag + obj.imag;
+    return res; 
+    }
+    // method / function to print result 
+    void print() { 
+        cout << real << " + j " << imag << '\n';
+    }
+};
+
+int main()
+{
+    Complex c1(10, 20), c2(100, 200); 
+    Complex c3 = c1+c2;
+    c3.print();
+    return 0;
+}
