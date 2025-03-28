@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std; 
+
+class Base { 
+    public:
+    string Name;
+    int Age; 
+    // method to call Bass class fcn 
+    void fcn1() { 
+        cout << "Base class function/method is being invoked: " << endl; 
+    }
+};
+class Derived : public Base {
+    public: 
+    void fcn2() { 
+        cout << "Derived class function/method is being invoked: " << endl;
+    }
+};
+
+int main()
+{
+    Base baseobj;
+    baseobj.fcn1();
+    Derived derivedobj;
+    derivedobj.fcn2(); 
+cout << "Note that calling the implementation in the Derived class, automatically invokes the implementation in the Base class!!! << endl; 
+
+    return 0;
+}
