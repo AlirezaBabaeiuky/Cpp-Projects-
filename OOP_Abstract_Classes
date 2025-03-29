@@ -6,7 +6,7 @@ class Smartphone {
     virtual void TakeASelfie() = 0; // this is abstract, you need to implement it in your own derived classes  
 }; // now the class Smartphone is now an ABSTRACT class 
 /* side notes about abstract classes: we cannot make instances but we can make pointers of abstrat classes
-and Smartphone class will not provide implementations for TakeASelfie fcn. now interface (abstracted layer) is created.
+and Smartphone class will not provide implementations for TakeASelfie fcn (method). Now interface (abstracted layer) is created.
 
 */
 class Android : public Smartphone { // derived class called: Android 
@@ -16,7 +16,7 @@ void TakeASelfie() {
 }
 };
 class IPhone : public Smartphone { 
-    void TakeASelfie() { 
+    void TakeASelfie() { // overrriding the pue virtual fcn/method in derived class, otherwise derived class becomes an abstract class itself.
         cout << "IPhone selfie\n"; 
     }
 };
@@ -24,11 +24,16 @@ class IPhone : public Smartphone {
 int main()
 {
     Smartphone* s1 = new Android();
-    s1 -> TakeASelfie(); 
+    s1 -> TakeASelfie(); // since we used pointer  we use -> to call the method otherwise use dot sign '.' 
 Smartphone* s2 = new IPhone();
     s2 -> TakeASelfie(); 
     return 0; // or: system("pause>0"); 
 }
 /* make a class as interface while hiding all details and complex parts
 make a class, provide interface so that anyone using my class does not need to know details of my complex details of how certain functionality and implementations are made, coffe machine example 
+to access members of  aclass use dot sign '.' but to access pointer members use '->' 
+why not to have: Smartphone s1; to create an object of class? because Smartphone is an abstract class (has a virtual fcn/method assigned to 0); and abstract classes cannot have: objects (cannot be instantiated)
+int* (data_type or class_name) denotes a pointer variable. a pointer is a variable that stores the address of another variable. int* nptr; this declaration states that nptr is a pointer variable that holds the 
+address of an integer/class_type varaible. note in cpp we cal also call the class_type: class_object. 
+ 
 */ 
