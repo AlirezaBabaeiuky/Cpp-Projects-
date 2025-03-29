@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Asterisk (*) as a pointer
+    int a = 5; // Variable 'a' with value 5
+    int* p = &a; // 'p' is a pointer to 'a', storing the memory address of 'a'
+    
+    cout << "Address of a: " << p << endl; // Print the memory address of 'a'
+    cout << "Value of a via pointer p: " << *p << endl; // Dereference 'p' to get the value of 'a'
+
+    // Changing the value at the address using the pointer
+    *p = 10; // Dereference 'p' to change the value at the address it points to
+    cout << "New value of a via pointer p: " << *p << endl; // Print the new value of 'a'
+    cout << "New value of a: " << a << endl; // Print the new value of 'a' directly
+
+    // Ampersand (&) as reference
+    int b = 20; // Variable 'b' with value 20
+    int& ref = b; // 'ref' is a reference to 'b', an alias for 'b'
+
+    cout << "Value of b: " << b << endl; // Print the value of 'b'
+    cout << "Value of b via reference ref: " << ref << endl; // Print the value of 'b' via reference 'ref'
+
+    // Changing the value using the reference
+    ref = 30; // Change the value of 'b' using the reference 'ref'
+    cout << "New value of b via reference ref: " << ref << endl; // Print the new value of 'b' via reference
+    cout << "New value of b: " << b << endl; // Print the new value of 'b' directly
+
+    // Ampersand (&) as address-of operator
+    int* p2 = &b; // 'p2' is a pointer to 'b', storing the memory address of 'b'
+    cout << "Address of b: " << p2 << endl; // Print the memory address of 'b'
+
+    return 0;
+}
