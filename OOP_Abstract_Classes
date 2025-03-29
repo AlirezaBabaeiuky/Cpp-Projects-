@@ -23,7 +23,10 @@ class IPhone : public Smartphone {
 
 int main()
 {
-    Smartphone* s1 = new Android();
+    Smartphone* s1 = new Android(); // new is a key word for dynamic memoery allocation. It creates and Android object in the heap memory by occupying a block of code in the heap mempry for Android.
+// s1 is a pointer that points to the Android object, but using the base class object.  to the Smartphone base class/object. . this allows polymorphism meaning we can call /invoke the method/fcn defined/declared
+// in the derived class using the base class pointer. new /android returns the address of the newly-created object. 
+// new Android on its own only creates an object of Android in the heap memory but here it also stores the address of Android in the heap memory. s1 only stores the memory address of the object. 
     s1 -> TakeASelfie(); // since we used pointer  we use -> to call the method otherwise use dot sign '.' 
 Smartphone* s2 = new IPhone();
     s2 -> TakeASelfie(); 
@@ -33,7 +36,13 @@ Smartphone* s2 = new IPhone();
 make a class, provide interface so that anyone using my class does not need to know details of my complex details of how certain functionality and implementations are made, coffe machine example 
 to access members of  aclass use dot sign '.' but to access pointer members use '->' 
 why not to have: Smartphone s1; to create an object of class? because Smartphone is an abstract class (has a virtual fcn/method assigned to 0); and abstract classes cannot have: objects (cannot be instantiated)
-int* (data_type or class_name) denotes a pointer variable. a pointer is a variable that stores the address of another variable. int* nptr; this declaration states that nptr is a pointer variable that holds the 
-address of an integer/class_type varaible. note in cpp we cal also call the class_type: class_object. 
- 
+int* (data_type or class_name) denotes a pointer variable. a pointer is a variable that stores the memory address of another variable. int* nptr; this declaration states that nptr is a pointer variable that holds the 
+address of an integer/class_type varaible. note in cpp we cal also call the class_type: class_object. So; asterisk (*) means pointer variable, and ampersand (&) means address of operator. 
+* is called dereference operator and & is called the reference operator. in our case: s1 is a pointer to Smartphone class_object. s1 hols the memory address of Smartphone.      
+--- asterisk and ampersand: 
+Asterisk (*) is pointer: Declares a pointer: int* p (stores a memory address) 
+Dereferences a pointer: *p = 10; (access/change the value at that address) 
+Ampersand (&) is Reference OR Adress-of 
+Reference (alias): int a = 5; int& ref = a; here ref is another name /alias for a;
+Adress-of: int* p = &a; (&a gets a's memory address). 
 */ 
