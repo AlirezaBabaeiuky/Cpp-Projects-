@@ -27,7 +27,7 @@ int main()
 // s1 is a pointer that points to the Android object, but using the base class object.  to the Smartphone base class/object. . this allows polymorphism meaning we can call /invoke the method/fcn defined/declared
 // in the derived class using the base class pointer. new /android returns the address of the newly-created object. 
 // new Android on its own only creates an object of Android in the heap memory but here it also stores the address of Android in the heap memory. s1 only stores the memory address of the object. 
-    s1 -> TakeASelfie(); // since we used pointer  we use -> to call the method otherwise use dot sign '.' 
+    s1 -> TakeASelfie(); // since we used pointer  we use -> to call the method otherwise use dot sign '.' . this is creating an object of derived calss using a pointer of base class. 
 Smartphone* s2 = new IPhone();
     s2 -> TakeASelfie(); 
     return 0; // or: system("pause>0"); 
