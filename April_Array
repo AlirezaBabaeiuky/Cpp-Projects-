@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std; 
+
+int main()
+{
+    char arr[] = {'a', 'b', 'c', 'd', 'e'}; 
+    cout << sizeof(arr) << endl; // getting the size of the array  
+    int aa = 10;
+    cout << &aa << endl; // getting memory address without pointer and only using: ampersand 
+    // also  note that ampersnad is also used to create a reference to the main/original variable 
+    int* aaptr = &aa; 
+    cout << aaptr << endl; // getting memory address via: pointer
+    cout << *aaptr << endl; 
+
+    return 0;
+}
