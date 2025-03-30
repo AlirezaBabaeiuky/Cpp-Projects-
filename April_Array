@@ -1,5 +1,15 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 #include <iostream>
 using namespace std; 
+
+//
 
 int main()
 {
@@ -11,6 +21,28 @@ int main()
     int* aaptr = &aa; 
     cout << aaptr << endl; // getting memory address via: pointer
     cout << *aaptr << endl; 
+    cout << "address of the specific array element via indexing: " << &arr[2] << endl; 
+    // Traverse means to get all the array elements via for-loop iterative method 
+    for (int i = 0 ; i < 5 ; i++) { 
+        cout << arr[i] << " ";
+    }
+// creating integer array 
+    int arr2[] = {1, 2, 3, 4, 5}; // initialization of the array 
+    int arr2n = sizeof(arr2) / sizeof(arr2[0]);
+    cout << endl << arr2n << endl;
+    cout << sizeof(arr2) << endl; 
+    // important: sizeof(arr) gives the TOTAL byes of an array . for int each element is holdin
+    // 4 byes so multiplied by 5 is total of 20 bytes. So we divide by one array size to get the number of elements only
+        // Declaring 2D array
+    int arr3[4][4];
+
+    // Initialize 2D array using loop
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            arr3[i][j] = i + j;
+        }
+    }
+
 
     return 0;
 }
