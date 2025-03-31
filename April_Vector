@@ -1,0 +1,183 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <array>
+#include <iterator>
+#include <string>
+#include <bits/stdc++.h>
+
+using namespace std; // to avoid prefixing :: (access identifiers to the members)
+// User-defiend method / function to print vector 
+void PrintVector1(vector<int>& v1) {
+    cout << endl << "printing vector via user-defined method/function: "; 
+    for (auto i : v1) {
+        cout << i << " ";
+    }
+    cout << endl; 
+}
+// another user-defined method / function to print an array
+void PrintArray1 (int arr1[], int array1size) {
+    cout << "using user-defined method/function to print array: ";  
+    for (int i=0; i<array1size; i++) {
+        cout << arr1[i] << " "; 
+    }
+    cout << endl; 
+}
+
+int main()
+{
+    vector<int> vec1 = {1, 2, 3, 5, 4}; // in array we have syntax: array<int, size_array> array_name 
+    int sizevec1 = sizeof(vec1) / sizeof(vec1[0]); 
+    // invoking / calling the user-defiend functions
+    PrintVector1(vec1); 
+    array<int, 4> array1 = {3, 2, 1, 4}; // this not acceptable as argument/input to the 'PrintArray1' function
+    // as the mentione dmethod only accepts int type and NOTE: int type is different than array type!!! 
+    int array2[] = {3, 1, 2, 4};
+    int sizearray2 = sizeof(array2) / sizeof(array2[0]); 
+    // invoking th euser-defined method / function 
+    PrintArray1(array2, sizearray2); // check what type of inputs/arguments you need to feed in!!!
+    
+    // Inserting elements into Vectors 
+    vector<char> vec2 = {'a', 'b', 'f', 'e'};
+    // inserting v at the back end 
+    vec2.push_back('3'); 
+    for (auto i:vec2) {
+        cout << i << " "; 
+    } 
+    cout << endl; 
+    // inserting an element at index 2:
+    vec2.insert(vec2.begin() + 2, 'i'); 
+    for (auto i:vec2) { 
+        cout << i << " ";
+    }
+    cout << endl; 
+    
+    // accessing elements 
+    cout << "accessing specific element in the array: ";
+    cout << vec2.at(3) << endl; 
+    
+    // updating or over-writing is also possible 
+    // getting the size 
+    cout << vec2.size() << endl; 
+    
+    // Traversing means usng range-based-for-loop to print 
+    for (auto i : vec2) {
+        cout << i << " "; 
+    }
+    cout << endl; 
+    /* cout << "for loop: ";
+    int endforloop = vec2.size(); 
+    for (int i=0; endforloop; i++) { 
+        cout << vec2[i] << " "; 
+    }
+    */ 
+    
+    // deleting element: vec2.pop_back(); or the following: 
+    vec2.erase(find(vec2.begin(), vec2.end(), 'f'));
+    for (auto i : vec2) { 
+        cout << i << " "; 
+    }
+    cout << endl; 
+    
+    // checking if vector is empty or not 
+    bool x = vec2.empty(); 
+    cout << x << "; x here is boolean variable with 0 as false and 1 as true" << endl;
+    // or other method is: 
+    if (vec2.empty()) { 
+        cout << "Empty"; 
+        } 
+        else { 
+            cout << "Not Empty";
+        }
+    
+    // resizing vector 
+    cout << endl; 
+    vec2.resize(9);
+    for ( auto i : vec2) { 
+        cout << i << " "; 
+    }
+    cout << endl; 
+    
+    // sorting 
+    vector<int> vec3 = {100, 40, 20, 30, 10};
+    cout << "Sorting a vector in ascending order: ";
+    sort(vec3.begin(), vec3.end());
+    for (auto i : vec3) { 
+        cout << i << " "; 
+    } 
+    cout << endl;
+    cout << "Sorting a vector in descending order: "; 
+    sort(vec3.begin(), vec3.end(), greater<int>()); 
+    for (auto i : vec3) { 
+        cout << i << " "; 
+    }
+    cout << endl; 
+    // abive is using built-in function. now sorting without built-in fcns 
+    int tem1, tem2; 
+    for (int i = 0 ; i < vec3.size(); i++) {  
+        for (int j=0; j<i+1 ; j++) { 
+            if (vec3[i] < vec3[j]) { 
+                // statement
+                tem1 = vec3[i];
+                vec3[i] = vec3[j]; 
+                vec3[j] = tem1; 
+            }
+        }
+    }
+    cout << "sorting vector without built-in sort function: ";
+    for (int i=0; i< vec3.size(); i++) { 
+        cout << vec3[i] << " "; 
+    }
+    cout << endl; 
+    
+    // Copying a vector 
+    vector<int> vec4(vec3); 
+    cout << "copying vector 3 into vector 4: "; 
+    for (auto i:vec4) {
+        cout << i << " ";
+    }
+    vector<int> vec5 = {101, 103, 102, 105, 104};
+    // swaping vectors
+    cout << endl << "Swapping: ";
+    vec5.swap(vec4); 
+    for (auto i : vec5) {
+        cout << i << " "; 
+    }
+    
+    // Removing duplicates
+    vector<int> vec6 = {10, 40, 40, 30, 20, 20, 100};
+    cout << endl;
+    for (auto i:vec6) { 
+        cout << i << " "; 
+    }
+    // first sort the vector 
+    sort(vec6.begin(), vec6.end()); 
+    cout << endl;
+    for (auto i:vec6) { 
+        cout << i << " "; 
+    }
+    //  move all duplicates to the last of the vector 
+    auto ite = unique(vec6.begin(), vec6.end()); // 'ite' points to the position where the UNIQUE elements end. 
+    /*cout << endl;
+    for (auto i:ite) { 
+        cout << i << " "; 
+    }*/
+    // remove all duplicates 
+    vec6.erase(ite, vec6.end()); // removes/erases vectors from ite till the end of vec6 
+    cout << endl;
+    for (auto i:vec6) { 
+        cout << i << " "; 
+    }
+    
+    
+    
+
+    return 0;
+}
