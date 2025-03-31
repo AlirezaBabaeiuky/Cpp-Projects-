@@ -7,42 +7,126 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 #include <iostream>
-using namespace std; 
+#include <algorithm>
+# include <array>
+# include <iterator>
+# include <string>
 
-//
+using namespace std;
 
 int main()
 {
-    char arr[] = {'a', 'b', 'c', 'd', 'e'}; 
-    cout << sizeof(arr) << endl; // getting the size of the array  
-    int aa = 10;
-    cout << &aa << endl; // getting memory address without pointer and only using: ampersand 
-    // also  note that ampersnad is also used to create a reference to the main/original variable 
-    int* aaptr = &aa; 
-    cout << aaptr << endl; // getting memory address via: pointer
-    cout << *aaptr << endl; 
-    cout << "address of the specific array element via indexing: " << &arr[2] << endl; 
-    // Traverse means to get all the array elements via for-loop iterative method 
-    for (int i = 0 ; i < 5 ; i++) { 
-        cout << arr[i] << " ";
+    array<int, 5> arr1 = {1, 2, 3, 4, 5};
+    array<string, 5> arr2 = {"Alex", "a", "b", "c", "David"}; 
+    cout << "Size of arrays using built-in functions form STL: " << endl; 
+    cout << arr1.size() << endl;
+    cout << arr2.size() << endl; // you could also use non-built-in fcn / method like: sizeof(arr1) / sizeof(arr1[0])
+    // to print the members user-defined for-loop or built-in 
+    int sizeofarr1 = arr1.size();
+    for (int i = 0; i < arr1.size(); i++) { 
+        cout << arr1[i] << " " ;
     }
-// creating integer array 
-    int arr2[] = {1, 2, 3, 4, 5}; // initialization of the array 
-    int arr2n = sizeof(arr2) / sizeof(arr2[0]);
-    cout << endl << arr2n << endl;
-    cout << sizeof(arr2) << endl; 
-    // important: sizeof(arr) gives the TOTAL byes of an array . for int each element is holdin
-    // 4 byes so multiplied by 5 is total of 20 bytes. So we divide by one array size to get the number of elements only
-        // Declaring 2D array
-    int arr3[4][4];
-
-    // Initialize 2D array using loop
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            arr3[i][j] = i + j;
+    cout << endl; 
+    // now using STL built-in fcns 
+    for (auto i : arr1) {
+        cout << i << " " ;
+    }
+    cout << endl; 
+    // sort the arrays - using built-in fcn otherwise you need to define and declare temp param 
+    sort(arr1.begin(), arr1.end(), greater<int>()); // in descending order, remove greater<int>() to do in ascending order
+    cout << endl << "Sorted: " ;
+    for (auto i : arr1) {
+        cout << i << " ";
+    }
+    // question how to store it in another variable/array to aovid over-writing 
+    cout << endl; 
+    arr1.fill(10);
+    for (auto i : arr1) {
+        cout << i << " "; 
+    }
+    /* cout << endl; 
+    for (auto i : arr1) {
+        cout << &i << " "; 
+    }*/
+    cout << endl; 
+    cout << arr1.begin() << " " << arr1.end() << endl; 
+    
+    array<int, 5> arr3 = {11, 12, 13, 14, 15};
+    for (auto i : arr3) {
+        cout << i << " ";
+    }
+    cout << endl; 
+    cout << arr3.begin() << endl;
+    cout << arr3.front() << endl;
+    cout << arr3.back() << endl; 
+    swap(arr3[0], arr3[2]); 
+    for (auto i : arr3) {
+        cout << i << " ";
+    }
+    cout << endl; 
+    bool x = arr3.empty(); // false (not empty) or you could also use if as conditional statement
+    cout << x << endl; // x in this section is a boolean operator with 0 and 1 outputs 
+    cout << arr3.at(4) << endl; // at built-in fcn is used to access a soecific element of a data container
+    // 2D arrays 
+    array<array<int, 4>, 2> arr4 = {{{1, 2, 3, 4}, {5, 6, 7, 8}}}; // declaring and initializing 2D array 
+    // or: array<array<int, 4>, 2> arr4 = 
+    // {array<int, 4> {1, 2, 3, 4}, array<int, 4> {5, 6, 7, 8}}; // declaring and initializing 2D array 
+    for (int i=0; i<arr4.size(); i++) { 
+        for (int j=0; j<arr4[i].size(); j++) {
+            cout << arr4[i][j] << " ";
+        }
+        cout << endl; 
+        }
+        cout << endl; 
+    // if manual method: 
+    int arr5[2][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}}; 
+    for (int i=0; i<2; i++) { 
+        for (int j=0; j<4; j++) { 
+            cout << arr5[i][j] << " ";
+        }
+        cout << endl;; 
+    }
+    array<array<int, 4>, 2> arr6 = {{{4, 3, 2, 1}, {8, 7, 6, 5}}};
+    // sorting 2D array 
+    //sort(arr6.begin(), arr6.end());
+    // printing using auto method 
+    cout << "arr6 is: "; 
+    for (auto i : arr6) { // this is range-based-for-loop syntax: meaning taking each element (row) at a time 
+        for (auto j : i) { // means taking each element in i (row) one a ta time 
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+    cout << endl; 
+    // sorting the arr6 :
+    cout << "Sorted arr6 is: "; 
+    for (auto i : arr6) {
+        sort(i.begin(), i.end()) ; 
+        for (int j : i) {
+            cout << j << " "; 
+        }
+        cout << endl;
+    }
+    // second method to sort whtout using STL built-in function: sort 
+    array<array<int, 4>, 2> arr7 = {{{4, 3, 2, 1}, {8, 7, 6, 5}}}; 
+    int tem1, tem2; 
+    for (int i=0; i<4; i++) { 
+        for (int ii=0; ii<4; ii++) { 
+            if (arr7[0][i] < arr7[0][ii]) {
+                tem1 = arr7[0][i];
+                arr7[0][i] = arr7[0][ii]; 
+                arr7[0][ii] = tem1; 
+            }
         }
     }
-
+    cout << endl << "Sorted without built-in function of STL (sort): ";
+    for (auto i : arr7[0]) {
+        cout << i << " ";
+    }
+    cout << endl; 
+    //
+    
+                
 
     return 0;
 }
