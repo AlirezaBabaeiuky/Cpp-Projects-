@@ -1,0 +1,52 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std; 
+
+int main()
+{
+    // map is associative key-value pair data containers 
+    map<int, string> m1 = {{1, "Geeks"}, {2, "for"}, {3, "Geeks"}}; // map<key_type, value_type, custom function to sort - optional>
+    
+    for (auto i : m1) { 
+        cout << i.first << " " << i.second << endl;
+    } 
+    // insert element - use .insert() - or directly []  
+    m1.insert({4, "addedone"}); 
+    // aaccessing elements inside it 
+    cout << m1[1] << endl; 
+    cout << m1.at(4) << endl; // only gives the string 
+    // there is always update method which is: over-write method 
+    // finding specific element in map associative data container 
+    auto it = m1.find(2);  // have not understood this part entirely though 
+        if (it != m1.end())
+        cout << it->first << " " << it->second;
+    else cout << "Key not Found!"; 
+    //
+    //maps can be easily traveresed: via range-based-for-loop or begin() end() iterators methods     
+       // Traversing using iterators
+    cout << endl; 
+    for (auto it = m1.begin(); it != m1.end(); ++it) 
+        cout << it->first << " " << it->second
+        << endl;
+    // 2 methods to delete 
+    // delete by key 
+    m1.erase(1); 
+    // delete by iterator 
+    m1.erase(m1.end()); 
+    cout << "printing after removing / deleting: "; 
+    for (auto i:m1) { 
+        cout << i.first << " " << i.second << endl;
+    }
+    
+
+    return 0;
+}
