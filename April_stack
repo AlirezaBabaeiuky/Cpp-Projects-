@@ -1,0 +1,82 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<stack> // stack header file 
+
+using namespace std; 
+
+int main()
+{
+    stack<int> st1; // making an object of stack type and call it: 'stack' 
+    // pushing elements onto the stack 
+    st1.push(1); 
+    st1.push(2);
+    st1.push(3); 
+    
+    /*while(!st1.empty()) { 
+        cout << st1.top() << " "; 
+        st1.pop();
+    }
+    cout << endl; 
+    */ 
+    // in stacks you can only add elements / insertion via: push() built-in fcn and it always go to the top of stack 
+    // you cannot insert any elements anywhere you like no only the top 
+    // only the top element of stack is accessible using top() method / fcn 
+    // so far: top() to access the top element and push() to insert th etop element
+    cout << "accessing via: top() method/fcn: " << st1.top() << endl; 
+    cout << "Hello" << endl; 
+    // so far: push(), top(), pop() to delete last or top element
+    st1.pop(); 
+    cout << st1.top() << endl; 
+    // so Traversing (accessing elements one by one) is impossible in stack as it only allows to access the top element. 
+    // though we can make a copy of the stack and remove the top element and pass this process through a loop untill making
+    // stack empty. 
+    // example: 
+    stack<int> st2; 
+    st2.push(10); 
+    st2.push(20);
+    st2.push(30); 
+    st2.push(40); 
+    st2.push(50); 
+    // make a copy of the stack st2
+    stack<int> temp(st2); // this syntax is for copying one stack into another stack 
+    while(!temp.empty()) { // means: if the temp stack object is NOT empty go to next line:  
+        cout << temp.top() << " "; // print top element of stack called: temp 
+        temp.pop(); // remove the top element till reacing null stack 
+    }
+    cout << endl << "The above is Traversing in stacks using copy-removal procedure" << endl; 
+    cout << "This technique in stack traversing is called: Pseudo Traversing" << endl; 
+    // now checking the size of stack 
+    cout << "Size of stack: " << st2.size() << endl; 
+    // recap: if you want to populate a stack, you need to manually insert elements using: push() built-in method
+    stack<int> temp2(st2); 
+    // to clear a stack you have only the following method: 
+    while(!temp2.empty()) { 
+        temp2.pop(); // pop() method to clear last or top element in stack 
+    }
+    cout << temp2.size() << endl;
+    // swap method for stacks other than copy 
+    stack<int> swapst; 
+    st2.swap(swapst); 
+    cout << swapst.size() << endl; 
+    // now to print using Pseudo traverse method 
+    while(!swapst.empty()) { 
+        cout << swapst.top() << " "; // prints 
+        swapst.pop();
+    }
+    // also note that with stacks, when you print it starts to print from the end in reverse order 
+    
+    
+        
+    
+    
+    
+
+    return 0;
+}
