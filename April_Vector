@@ -397,6 +397,40 @@ int main()
     // pointers are used in c++ for dynamic memory allocation. we are assigning the '&xx' (memory address) to pointer named: nptr.
     // ampersand sign means address-of operator.
 */
+  /* 
+  #include <iostream>
+using namespace std; 
+
+void fcnFac1(int num) { // if using void as return type then you cannot assign anything to this i nth emain loop (i.e., 
+//i.e., int result = fcnFac1(number) in the main loop). And with void you should use the cout or printf in th evoid function!!!
+    int fac = 1; 
+    for (int i=1; i<=num; i++) {
+        fac = fac*i;
+    }
+    cout << fac << endl; 
+}
+
+int fcnFac2(int num2) { 
+    int fac2 = 1;
+    for (int i=1; i<=num2; i++) { 
+        fac2 = fac2*i; 
+    }
+    return fac2;// cout can be also defined in the main code body 
+}
+
+int main()
+{
+    int number = 5; 
+    int result; 
+    result = fcnFac2(number);
+    cout << result << endl; 
+    fcnFac1(number); 
+    
+
+    return 0;
+}
+*/
+
   
     
     
