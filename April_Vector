@@ -392,6 +392,11 @@ int main()
     return 0;
 }
     */
-    
+/* 
+    // &xx where & is the memory address operator.this is making a nptr as a pointer to the integer xx storing the memory address of xx. 
+    // pointers are used in c++ for dynamic memory allocation. we are assigning the '&xx' (memory address) to pointer named: nptr.
+    // ampersand sign means address-of operator.
+*/
+  
     
     
