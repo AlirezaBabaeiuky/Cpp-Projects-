@@ -1,0 +1,62 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <array>
+#include <iterator>
+#include <string>
+#include <bits/stdc++.h>
+
+using namespace std; 
+
+int main()
+{
+    list<int> list1, list2; // syntax to make list objects in c++
+    
+    int arr1[] = {10, 20, 30, 40}; 
+    int arr2[] = {15, 25, 35, 40, 50};
+    
+    for (int i=0; i<4; i++) { 
+        list1.push_back(arr1[i]);
+        list2.push_back(arr2[i]);
+    }
+    
+    list1.merge(list2); // merging 2 lists into one list 
+    //cout << list1.merge(list2);
+    
+    for (auto i:list1) {
+        cout << i << " "; 
+    } cout << endl; 
+    
+    list1.unique(); // removing the duplicate elements in the merged list 
+    
+    int size = list1.size(); 
+    
+    // Traversing 
+    while(!list1.empty()) { 
+        cout << list1.front() << " "; // prints the front element 
+        list1.pop_front(); // removes the top element till reaching the while condition
+    } 
+    cout << endl; 
+    cout << "second method to use for loop for traversing: " << endl; 
+    // another method to traerse 
+    for (auto i:list1) { 
+        cout << i << " ";
+    } 
+    cout << endl;
+    
+    vector<int> v1 = {1, 2, 3, 4, 5};
+    for (auto i:v1) { 
+        cout << i << " ";
+    }
+    cout << endl;
+    
+
+    return 0;
+}
