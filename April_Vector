@@ -401,7 +401,7 @@ int main()
   #include <iostream>
 using namespace std; 
 
-void fcnFac1(int num) { // if using void as return type then you cannot assign anything to this i nth emain loop (i.e., 
+void fcnFac1(int num) { // if using void as return type of function, then you cannot assign anything to this in the main loop (i.e., 
 //i.e., int result = fcnFac1(number) in the main loop). And with void you should use the cout or printf in th evoid function!!!
     int fac = 1; 
     for (int i=1; i<=num; i++) {
@@ -430,7 +430,182 @@ int main()
     return 0;
 }
 */
+/* 
+#include <iostream>
+using namespace std; 
 
-  
+int main()
+{
+    int count = 0;
+    do { 
+        cout << count++ << endl;
+    }
+    while(count <=10);
+
+    return 0;
+}
+*/
+/* 
+#include <iostream>
+using namespace std; 
+
+class Test { // class name  
+    public: // access specifier / modifier 
+    int A; // class member type and variable name 
     
+    // constructor to declare and initialize the member variable 
+    Test(int a) { // parametrized constructor 
+    A = a; 
+    }
     
+    // define and declare a member function to print A: 
+    void printfcn() { 
+        cout << "A is: " << A << endl; 
+    }
+};
+
+
+int main()
+{
+    Test Obj(10);
+    Obj.A = 12; 
+    Obj.printfcn();
+
+    return 0;
+}
+*/
+/*
+ #include <iostream>
+using namespace std; 
+
+class Student { 
+    public: 
+    
+    string Name; 
+    int Grade; 
+    
+    Student(string name, int grade) { 
+        Name = name; 
+        Grade = grade; 
+    }
+    
+    // members function
+    void memberfcn() { 
+        cout << "Student Name is: " << Name << endl;
+        cout << "Student Grade is: " << Grade << endl; 
+    }
+};
+
+int main()
+{
+    // first we need to create an object of class Student 
+    Student SCObj("Alex", 95); // look since the constructor is parametrized (we need to pass in arguments/parameters), we need to pass them here as well; 
+    // initialize the created object with values 
+    //SCObj.Name = "Alex";
+    //SCObj.Grade = 95; 
+    // invoke or call the member function defined inside th eclass 
+    SCObj.memberfcn();
+    // or use default constructor then remove () when defining the pbject and assign values after creating object 
+    // Student SCObj; 
+    //SCObj.Name = "Alex";
+    //SCObj.Grade = 95; 
+    
+    return 0;
+} 
+  */
+  /* 
+  #include <iostream>
+using namespace std; 
+
+class Numbers { 
+    public: 
+    int N; 
+    Numbers() {
+    }
+    void print() { 
+        do{
+            cout << N++ << " "; 
+        }
+        while(N < 10);
+    }
+};
+
+int main()
+{
+    Numbers Obj; 
+    Obj.print(); 
+
+    return 0;
+}
+  */
+ 
+ /*
+ two methods: 
+ #include <iostream>
+using namespace std; 
+
+int fcnfac(int N) { 
+    int Fac = 1; 
+    for (int i=1; i<=N; i++) { 
+        Fac = Fac*i; 
+    }
+    cout << "Number provided by the user is: " << N << " and the factorial is: " << Fac; 
+    return Fac; 
+}
+
+int main()
+{
+    cout << "User needs to provide an integer number here: "; 
+    int number; 
+    cin >> number; 
+    fcnfac(number); 
+
+    return 0;
+}
+ or:
+ #include <iostream>
+using namespace std; 
+
+void fcnfac(int N) { 
+    int Fac = 1; 
+    for (int i=1; i<=N; i++) { 
+        Fac = Fac*i; 
+    }
+    cout << "Number provided by the user is: " << N << " and the factorial is: " << Fac; 
+}
+
+int main()
+{
+    cout << "User needs to provide an integer number here: "; 
+    int number; 
+    cin >> number; 
+    fcnfac(number); 
+
+    return 0;
+}
+ */
+ /* to use a function to know if a number is odd or even 
+ #include <iostream>
+using namespace std; 
+
+void fcn1(int N) { 
+    if (N % 2 != 0) { 
+        cout << N << " is ODD number" << endl; 
+    }
+    else { 
+        cout << N << " is EVEN number" << endl; 
+    }
+}
+
+int main()
+{
+    cout << "User needs to provide a number: " << endl; 
+    int usernumber; 
+    cin >> usernumber; 
+    fcn1(usernumber); 
+
+    return 0;
+}
+*/ 
+
+ 
