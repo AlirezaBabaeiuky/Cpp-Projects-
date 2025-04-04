@@ -15,7 +15,7 @@ int main () {
             cout << "You're old enough and have been granted access.\n";
         }else{
             //throw (age);
-            throw 505;
+            throw 505; // throw is a keyword and the integer or whatever data variable defined in the catch section will be printed 
         }
     }
     catch (int e){
