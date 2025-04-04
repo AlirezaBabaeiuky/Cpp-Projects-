@@ -1,0 +1,29 @@
+#include <iostream>
+# include <math.h>
+
+using namespace std; 
+
+class Car { 
+    public: 
+    string Name;
+    int Year; 
+    
+    Car() {
+        
+    }
+    
+    void fcn() { 
+        cout << Name << endl;
+        cout << Year << endl; 
+    }
+};
+
+int main()
+{
+    Car MyCar;
+    MyCar.Name = "Lexus"; 
+    MyCar.Year = 2020; 
+    MyCar.fcn(); 
+
+    return 0;
+}
