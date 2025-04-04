@@ -635,3 +635,32 @@ int main()
 }
 */
  
+/* 
+#include <iostream>
+using namespace std; 
+
+void fcn1(int N1) { // meaing thae fcn accepts only integer type and returns the N as printging this  
+    cout << "invoking function 1: " << N1 << endl; 
+}
+int fcn2(int N2) {
+    cout << "invoking function 2: " << N2 << endl; 
+    return N2;
+}
+
+int main()
+{
+    int number = 10;
+    fcn1(number); 
+    fcn2(number); 
+
+    return 0;
+}
+*/
+
+/*
+
+*/
+
+/*
+
+*/
