@@ -1,0 +1,42 @@
+#include <iostream>
+#include <fstream> // Include fstream to handle file operations
+
+using namespace std;
+
+/* Files & Streams - Writing To A File
+**
+** This program demonstrates reading from and writing to a file in C++.
+*/
+
+int main() {
+    const int MAX = 80; 
+    char buffer[MAX]; // buffer: 0
+
+    // Reading from a file
+    ifstream readfile("POEMS.txt"); // Open the file for reading // readfile is object name for ifstream. it is user-defined name 
+    if (!readfile) { // Check if the file was opened successfully
+        cout << "Error opening file for reading!" << endl;
+        return 1; // Exit the program with an error code
+    }
+
+    while (readfile.getline(buffer, MAX)) { // Read each line of text
+        cout << buffer << endl; // Print the line to the console
+    }
+    readfile.close(); // Close the file after reading
+
+    // Writing to a file
+    ofstream writefile("POEMS.txt", ios::app); // Open the file for writing, append mode // ios::app ensures to write as append mode meaning not to overwirte 
+// but to write at the ned of current content of the file 
+    if (!writefile) { // Check if the file was opened successfully
+        cout << "Error opening file for writing!" << endl;
+        return 1; // Exit the program with an error code
+    }
+
+    writefile << "Over hill, over dale,\n";
+    writefile << "Thorough bush, thorough brier,\n";
+    writefile << "Over park, over pale,\n";
+    writefile << "Thorough flood, thorough fire!\n";
+    writefile.close(); // Close the file after writing
+
+    return 0;
+}
