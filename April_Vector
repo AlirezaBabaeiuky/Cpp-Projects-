@@ -607,5 +607,31 @@ int main()
     return 0;
 }
 */ 
+/* 
+#include <iostream>
+using namespace std; 
 
+class Test { 
+    public: 
+    int N; 
+    Test(int n) { 
+        N = n; 
+    }
+    void fcnfac() { 
+        int fac = 1; 
+        for (int i=1; i<=N; i++) { 
+            fac = fac*i; 
+        }
+        cout << fac << endl; 
+    }
+};
+
+int main()
+{
+    Test t(5); 
+    t.fcnfac(); 
+
+    return 0;
+}
+*/
  
