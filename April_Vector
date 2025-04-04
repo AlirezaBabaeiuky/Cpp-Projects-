@@ -656,11 +656,87 @@ int main()
     return 0;
 }
 */
-
+// parametrised versus non-parametrised constructors 
 /*
+#include <iostream>
+using namespace std; 
 
+class Test { 
+    public: 
+    int N;
+    
+    Test() { 
+    }
+    
+    void fcn(int N) { 
+        cout << N << endl; 
+    }
+}; 
+
+int main()
+{
+    Test T; 
+    T.N = 10; // if constructor is not parametrized, you feed in the numbers in the main code 
+    T.fcn(10); 
+
+    return 0;
+}
 */
 
+/*
+#include <iostream>
+using namespace std; 
+
+class Test { 
+    public: 
+    int N;
+    
+    Test(int n) {
+        N = n; 
+    }
+    
+    void fcn(int N) { 
+        cout << N << endl; 
+    }
+}; 
+
+int main()
+{
+    Test T(10); // if constructor is not parametrised you feed/pass in the input in the object creation level.
+    //T.N = 10;
+    T.fcn(10); 
+
+    return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std; 
+
+class BClass { 
+    public: 
+    int N;
+    
+    BClass() {
+    }
+    void SetN(int n) {
+        N = n; 
+        cin >> N; 
+    }
+    void PrintN() { 
+        cout << N << endl;
+    }
+};
+
+int main()
+{
+    BClass obj1, obj2;
+    obj1.SetN(1); 
+    obj1.PrintN();
+
+    return 0;
+}
+*/
 /*
 
 */
