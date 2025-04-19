@@ -13,7 +13,7 @@ Code, Compile, Run and Debug online from anywhere in world.
 #include <string>
 #include <bits/stdc++.h>
 
-using namespace std; // to avoid prefixing :: (access identifiers to the members)
+using namespace std; // to avoid prefixing :: (access identifiers to in different scopes to avoid name conflicts)
 // User-defiend method / function to print vector 
 void PrintVector1(vector<int>& v1) {
     cout << endl << "printing vector via user-defined method/function: "; 
