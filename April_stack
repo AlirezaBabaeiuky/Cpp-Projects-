@@ -71,12 +71,13 @@ int main()
         swapst.pop();
     }
     // also note that with stacks, when you print it starts to print from the end in reverse order 
-    
-    
-        
-    
-    
-    
 
     return 0;
 }
+/* 
+push(): Adds an element to the top of the stack.
+pop(): Removes the element from the top of the stack.
+top(): Returns a reference to the top element in the stack, without removing it.
+empty(): Checks if the stack is empty.
+size(): Returns the number of elements in the stack.
+*/
