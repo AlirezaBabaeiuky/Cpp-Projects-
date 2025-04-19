@@ -16,8 +16,9 @@ using namespace std;
 
 int main()
 {
-    array<int, 5> arr1 = {1, 2, 3, 4, 5}; // array is a fixed-size data container 
-    array<string, 5> arr2 = {"Alex", "a", "b", "c", "David"}; 
+    array<int, 5> arr1 = {1, 2, 3, 4, 5}; // array is a fixed-size data container but vector is dynamic-size data container - recap: 'string' is not a built-in data type in c (although it is in c++)
+// in c you present c you need to have an array of characters via 'char' built-in data type. double colon is scope resolution operator giving access to identifiers in different scopes to avoid name conflicts. 
+    array<string, 5> arr2 = {"Alex", "a", "b", "c", "David"}; iterator is abstract pointer 
     cout << "Size of arrays using built-in functions form STL: " << endl; 
     cout << arr1.size() << endl;
     cout << arr2.size() << endl; // you could also use non-built-in fcn / method like: sizeof(arr1) / sizeof(arr1[0])
