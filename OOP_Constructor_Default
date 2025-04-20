@@ -19,7 +19,7 @@ class User {
     
     // c: has same name as class, does not receive parameters, does not return anything, should be placed in public part of class, 
     // if not create your own c, cpp will create a defauly for you, default c is automatically invoked everytime that you create object of class 
-    User() { // this is c (constructor) - this is default c 
+    User() { // this is c (constructor) - this is default c as we do not pass any arguments / parameters 
     FirstName = "nn"; 
     LastName = "nn";
     Age = 0; 
@@ -41,3 +41,24 @@ int main() // main function coming with int is the entry point of the prgoram
 
     return 0;
 }
+/*
+#include <iostream>
+using namespace std; 
+
+class User { 
+    public: 
+    string Name;
+    void fcn1() { 
+        cout << "User name is: " << Name << endl;
+    }
+};
+
+int main()
+{
+    User uobj; 
+    uobj.Name = "Alireza"; 
+    uobj.fcn1(); 
+
+    return 0;
+}
+*/
