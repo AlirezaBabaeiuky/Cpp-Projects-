@@ -46,3 +46,8 @@ Ampersand (&) is Reference OR Adress-of
 Reference (alias): int a = 5; int& ref = a; here ref is another name /alias for a;
 Adress-of: int* p = &a; (&a gets a's memory address). 
 */ 
+/*
+if a base class has a pure virtual function, the derived class becomes an abstract class itself unless we override the function. in other words, if we make a function pure virtual, the class comprising this 
+becomes abstract class. Abstract class cannot be instantiated (we cannot make an object of it). Now if we derive / inherit a child class from this base class; we should override (use the same function in base class), 
+otherwise the derived class becomes abstract itself. You should implement the pure virtual function in Base class in derived class. Polymorphism in this example means: we use base class pointer to call 
+to call the function, but the actual function that runs is from th ederived class, based on the object type. this works because function is virtual enabling runtime decision of which function to call.   
