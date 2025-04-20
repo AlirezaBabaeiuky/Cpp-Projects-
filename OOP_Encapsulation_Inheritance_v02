@@ -72,3 +72,29 @@ int main()
 
     return 0;
 }
+
+/*
+#include <iostream>
+using namespace std; 
+
+class Car { 
+    public: 
+    string Name; 
+    int Year; 
+    void fcn1() { 
+        cout << "User should provide his car's name here: " << endl;
+        cin >> Name; 
+        cout << "User should provid his car year here: " << endl; 
+        cin >> Year; 
+        cout << Name << " " << Year << endl; 
+    }
+};
+
+int main()
+{
+    Car MyCar; 
+    MyCar.fcn1(); 
+
+    return 0;
+}
+*/
