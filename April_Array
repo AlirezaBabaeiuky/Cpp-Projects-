@@ -1,9 +1,8 @@
 /******************************************************************************
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
 #include <iostream>
@@ -50,15 +49,15 @@ int main()
         cout << &i << " "; 
     }*/
     cout << endl; 
-    cout << arr1.begin() << " " << arr1.end() << endl; 
+    cout << "printing here: " << arr1.begin() << " " << arr1.end() << endl; 
     
     array<int, 5> arr3 = {11, 12, 13, 14, 15};
     for (auto i : arr3) {
         cout << i << " ";
     }
     cout << endl; 
-    cout << arr3.begin() << endl;
-    cout << arr3.front() << endl;
+    cout << "arr3.begin is: " << arr3.begin() << "So begin / end give you the memory address" << endl;
+    cout << "arr3.front is: " << arr3.front() << endl;
     cout << arr3.back() << endl; 
     swap(arr3[0], arr3[2]); 
     for (auto i : arr3) {
@@ -101,7 +100,7 @@ int main()
     cout << endl; 
     // sorting the arr6 :
     cout << "Sorted arr6 is: "; 
-    for (auto i : arr6) {
+    for (auto& i : arr6) { // why to have ampersand? if not it will change the copy but not the original
         sort(i.begin(), i.end()) ; 
         for (int j : i) {
             cout << j << " "; 
