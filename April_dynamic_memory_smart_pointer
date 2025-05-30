@@ -74,7 +74,31 @@ int main()
     // Resetting a shared pointer
     shr_ptr1.reset();
 }
+also try my code in the following: 
+#include <iostream>
+#include <memory>
+using namespace std; 
 
+class A { 
+    public: 
+    void printA() { 
+        cout << "A ..." << endl; 
+    } 
+};
 
+int main()
+{
+    A objA; 
+    objA.printA(); 
+    // smart pointer 
+    unique_ptr<A> p1(new A);
+    p1->printA(); 
+    cout << p1.get() << endl; 
+    unique_ptr<A> p2 = move(p1);
+    p2->printA(); 
+    cout << p1.get() << " " << p2.get() << endl; 
+
+    return 0;
+}
 
 */
