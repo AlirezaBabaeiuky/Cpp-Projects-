@@ -59,4 +59,11 @@ New is a dynamic memory operator that creates an object on the heap memory and r
 overriding the virtual function means defining the same function (same return type, same name, same input parameters). If a base class has a virtual function/method, the derived class SHOULD override
 this virtial function; otherwsise the derived class itself becomes an abstract class and we cannot create objects (instances) of this derived class. 
 
+we have: heap memory and stack memory. heap memory is used for dynamic memory allocation. heap memory has a fixed size and follows LIFO order. it allows for allocation and deallocation of memory blocks during runtime.
+in Smartphone* s1 = new Android(); s1 is pointer to the Android object which is defiiend in the heap moemory. and pointer (s1) holds the memory address. 
+Polymorphism (specifically, runtime polymorphism) is about treating objects of different derived types through a pointer or reference of their common base type, allowing a single function call to perform different 
+actions based on the actual object type at runtime. 
+In your example, Smartphone* s1 = new Android();, the Smartphone* pointer s1 can point to an Android object (or any other derived class of Smartphone). When you call a virtual function using s1, C++ will determine 
+at runtime which specific version 
+(from Android or another derived class) to execute, enabling the object to exhibit different behaviors depending on its actual type. 
 */
