@@ -56,4 +56,7 @@ code, to call the right function for different object types using a single inter
  - enabling polymorphism behavior. Why not to hav edirect derived class object? we use a base class pointer to handle multiple derived types with the same interface, making the code mor egeneric and extensible. 
 New is a dynamic memory operator that creates an object on the heap memory and returns a pointer to it.  used here to store the derived class objects at runetime.      
 
+overriding the virtual function means defining the same function (same return type, same name, same input parameters). If a base class has a virtual function/method, the derived class SHOULD override
+this virtial function; otherwsise the derived class itself becomes an abstract class and we cannot create objects (instances) of this derived class. 
+
 */
