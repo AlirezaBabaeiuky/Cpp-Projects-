@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std; 
+
+int main()
+{
+    int mat1[1][2] = {{1, 2}};
+    for (int i=0; i<1; i++) { 
+        for (int j=0; j<2; j++) { 
+            cout << mat1[i][j] << ' ';
+        }
+        cout << endl; 
+    }
+    
+    int mat2[2][1] = {{2}, {1}};
+    for (int i=0; i<2; i++) { 
+        for (int j=0; j<1; j++) { 
+            mat2[i][j] = mat1[j][i];
+        }
+    }
+     for (int i=0; i<2; i++) { 
+        for (int j=0; j<1; j++) { 
+            cout << mat2[i][j] << ' ';
+        }
+        cout << endl; 
+    }
+    
+
+    return 0;
+}
