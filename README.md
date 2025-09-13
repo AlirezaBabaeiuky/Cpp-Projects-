@@ -11,3 +11,6 @@ Ampersand (&)
 Address-of Operator: Returns the memory address of a variable, as in p = &a;.
 Bitwise AND: Performs a bitwise AND operation on two integer values, as in int result = a & b;.
 C++ Reference: Creates a reference (an alias) for an existing variable, as in int& r = a;
+Logical AND, &&, Returns true only if all the operands are true or non-zero. e.g., cout << "a && b is " << (a && b) << endl; ---- answer is 1
+Logical OR, ||, Returns true if either of the operands is true or non-zero
+Logical NOT, !, Returns true if the operand is false or zero
