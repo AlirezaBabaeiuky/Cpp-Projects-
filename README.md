@@ -14,3 +14,4 @@ C++ Reference: Creates a reference (an alias) for an existing variable, as in in
 Logical AND, &&, Returns true only if all the operands are true or non-zero. e.g., cout << "a && b is " << (a && b) << endl; ---- answer is 1
 Logical OR, ||, Returns true if either of the operands is true or non-zero
 Logical NOT, !, Returns true if the operand is false or zero
+Ternery or conditional operators - this is specific case that you can do instead of if. Syntax: Expression1 ? Expression2 : Expression3. If Expression1 is true, then Expression2 gets evaluated. If Expression1 is false, then Expression3 gets evaluated.
