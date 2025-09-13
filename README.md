@@ -16,3 +16,4 @@ Logical OR, ||, Returns true if either of the operands is true or non-zero
 Logical NOT, !, Returns true if the operand is false or zero
 Ternery or conditional operators - this is specific case that you can do instead of if. Syntax: Expression1 ? Expression2 : Expression3. If Expression1 is true, then Expression2 gets evaluated. If Expression1 is false, then Expression3 gets evaluated.
 Arrow operator is used to access the variables of classes or structures through its pointer. sptr -> pointer; 
+>> is extraction operator and << is insertion operator. 
