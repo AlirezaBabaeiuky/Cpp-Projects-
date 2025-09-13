@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std; 
+
+int main()
+{
+    int a=10, b=20; 
+    
+    cout << (a == b) << endl; // relational operator 
+    cout << (a && b) << endl; // logical operator 
+    
+    int c = 0;
+    
+    cout << (a || c) << endl; 
+    
+    int e;
+    e = a;
+    e -= a; 
+    cout << e << endl; 
+    
+    // Ternery operations 
+    cout << a << ' ' << b << endl; 
+    int ter = (a<b) ? a : b; // means: if a is smaller than b then evaluate a else evaluate b. 
+    cout << ter << endl; 
+    
+
+    return 0;
