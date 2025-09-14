@@ -18,4 +18,4 @@ Ternery or conditional operators - this is specific case that you can do instead
 Arrow operator is used to access the variables of classes or structures through its pointer. sptr -> pointer; 
 double arrow to the right >> is extraction operator and << is insertion operator.
 The continue statement is used to skip the loop body for the current iteration and continue from the next iteration. Unlike the break statement which terminates the loop completely, continue allows us just to skip one iteration and continue with the next iteration.
-Traversing means visiting each element one by one. Array size is fixed. 
+Traversing means visiting each element one by one. Array size is fixed. Recap: & is the address of operator. Poniter gives you the memory address (int* ptr = &var;).  
